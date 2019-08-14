@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <Resource id="mysql_ds" type="javax.sql.DataSource">
+        JdbcDriver  = org.apache.derby.jdbc.EmbeddedDriver
+        JdbcUrl     = jdbc:derby:memory:DefaultDB;create=true
+        UserName    = demo
+        Password    = demo
+        JtaManaged  = false
+    </Resource>
+</resources>

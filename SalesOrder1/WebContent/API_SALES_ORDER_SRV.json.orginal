@@ -1,0 +1,95 @@
+{
+	"basePath" : "/sap/opu/odata/sap/API_SALES_ORDER_SRV",
+	"paths": {
+	     "/A_SalesOrder": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrder()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderHeaderPartner": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderHeaderPartner()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderHeaderPrElement": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderHeaderPrElement()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderItem": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderItem()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderItemPartner": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderItemPartner()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderItemPrElement": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderItemPrElement()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderItemText": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderItemText()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderScheduleLine": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderScheduleLine()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SalesOrderText": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SalesOrderText()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     },
+	     "/A_SlsOrdPaymentPlanItemDetails": {
+	       "get": {},
+	       "post": {}
+	     },
+	     "/A_SlsOrdPaymentPlanItemDetails()": {
+	       "get": {},
+	       "patch": {},
+	       "delete": {}
+	     }
+	   }
+}

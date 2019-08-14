@@ -1,0 +1,299 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:edi="http://sap.com/xi/EDI">
+   <soap:Header/>
+   <soap:Body>
+      <edi:PaymentAdviceNotification>
+         <MessageHeader>
+            <!--Optional:-->
+            <ID schemeID="?" schemeAgencyID="?" schemeAgencySchemeAgencyID="?">1</ID>
+            <!--Optional:-->
+            <ReferenceID schemeID="?" schemeAgencyID="?" schemeAgencySchemeAgencyID="?">?</ReferenceID>
+            <CreationDateTime></CreationDateTime>
+            <!--Optional:-->
+            <ReconciliationIndicator>?</ReconciliationIndicator>
+            <!--Optional:-->
+            <SenderBusinessSystemID>?</SenderBusinessSystemID>
+            <!--Optional:-->
+            <RecipientBusinessSystemID>?</RecipientBusinessSystemID>
+            <!--Optional:-->
+            <SenderParty>
+               <!--Optional:-->
+               <InternalID>?</InternalID>
+               <!--Zero or more repetitions:-->
+               <StandardID>?</StandardID>
+               <!--Optional:-->
+               <ContactPerson>
+                  <!--Optional:-->
+                  <InternalID schemeID="?" schemeAgencyID="?">?</InternalID>
+                  <!--0 to 4 repetitions:-->
+                  <OrganisationFormattedName>?</OrganisationFormattedName>
+                  <!--0 to 4 repetitions:-->
+                  <PersonFormattedName>?</PersonFormattedName>
+                  <!--Zero or more repetitions:-->
+                  <PhoneNumber>
+                     <!--Optional:-->
+                     <AreaID>?</AreaID>
+                     <!--Optional:-->
+                     <SubscriberID>?</SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID>?</ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode>?</CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="?">?</CountryName>
+                  </PhoneNumber>
+                  <!--Zero or more repetitions:-->
+                  <FaxNumber>
+                     <!--Optional:-->
+                     <AreaID>?</AreaID>
+                     <!--Optional:-->
+                     <SubscriberID>?</SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID>?</ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode>?</CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="?">?</CountryName>
+                  </FaxNumber>
+                  <!--Zero or more repetitions:-->
+                  <EmailURI schemeID="?">?</EmailURI>
+               </ContactPerson>
+            </SenderParty>
+            <!--Zero or more repetitions:-->
+            <RecipientParty>
+               <!--Optional:-->
+               <InternalID>?</InternalID>
+               <!--Zero or more repetitions:-->
+               <StandardID>?</StandardID>
+               <!--Optional:-->
+               <ContactPerson>
+                  <!--Optional:-->
+                  <InternalID schemeID="?" schemeAgencyID="?">?</InternalID>
+                  <!--0 to 4 repetitions:-->
+                  <OrganisationFormattedName>?</OrganisationFormattedName>
+                  <!--0 to 4 repetitions:-->
+                  <PersonFormattedName>?</PersonFormattedName>
+                  <!--Zero or more repetitions:-->
+                  <PhoneNumber>
+                     <!--Optional:-->
+                     <AreaID>?</AreaID>
+                     <!--Optional:-->
+                     <SubscriberID>?</SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID>?</ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode>?</CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="?">?</CountryName>
+                  </PhoneNumber>
+                  <!--Zero or more repetitions:-->
+                  <FaxNumber>
+                     <!--Optional:-->
+                     <AreaID>?</AreaID>
+                     <!--Optional:-->
+                     <SubscriberID>?</SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID>?</ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode>?</CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="?">?</CountryName>
+                  </FaxNumber>
+                  <!--Zero or more repetitions:-->
+                  <EmailURI schemeID="?">?</EmailURI>
+               </ContactPerson>
+            </RecipientParty>
+            <!--Zero or more repetitions:-->
+            <BusinessScope>
+               <TypeCode listID="?" listVersionID="?" listAgencyID="?" listAgencySchemeID="?" listAgencySchemeAgencyID="?">?</TypeCode>
+               <!--Optional:-->
+               <InstanceID schemeID="?" schemeAgencyID="?">?</InstanceID>
+               <!--Optional:-->
+               <ID schemeID="?" schemeAgencyID="?">?</ID>
+            </BusinessScope>
+         </MessageHeader>
+         <PaymentAdviceNotification>
+            <!--Optional:-->
+            <PaymentAdviceID>?</PaymentAdviceID>
+            <!--Optional:-->
+            <DocumentDate>?</DocumentDate>
+            <!--Optional:-->
+            <PaymentFormCode>?</PaymentFormCode>
+            <!--Optional:-->
+            <PaymentDate>?</PaymentDate>
+            <!--Optional:-->
+            <PaymentTransactionInitiatorBankAccountValueDate>?</PaymentTransactionInitiatorBankAccountValueDate>
+            <!--Optional:-->
+            <PaymentTransactionDestinatedBankAccountValueDate>?</PaymentTransactionDestinatedBankAccountValueDate>
+            <!--Optional:-->
+            <BillOfExchangeDueDate>?</BillOfExchangeDueDate>
+            <!--Optional:-->
+            <NetAmount currencyCode="?">?</NetAmount>
+            <!--Optional:-->
+            <GrossAmount currencyCode="?">?</GrossAmount>
+            <!--Optional:-->
+            <CashDiscountAmount currencyCode="?">?</CashDiscountAmount>
+            <!--Optional:-->
+            <WithholdingTaxAmount currencyCode="?">?</WithholdingTaxAmount>
+            <!--Optional:-->
+            <BankFeeAmount currencyCode="?">?</BankFeeAmount>
+            <!--Optional:-->
+            <Note languageCode="?">?</Note>
+            <!--Zero or more repetitions:-->
+            <Party PartyType="?">
+               <!--Optional:-->
+               <GlobalLocationNumber>?</GlobalLocationNumber>
+               <!--Optional:-->
+               <BuyerPartyID>?</BuyerPartyID>
+               <!--Optional:-->
+               <SupplierPartyID>?</SupplierPartyID>
+               <!--Optional:-->
+               <Address>
+                  <!--Optional:-->
+                  <FormOfAddress>?</FormOfAddress>
+                  <!--Optional:-->
+                  <FormOfAddressName>?</FormOfAddressName>
+                  <!--Optional:-->
+                  <AddressName>?</AddressName>
+                  <!--Optional:-->
+                  <AddressAdditionalName>?</AddressAdditionalName>
+                  <!--Optional:-->
+                  <StreetName>?</StreetName>
+                  <!--Optional:-->
+                  <HouseNumber>?</HouseNumber>
+                  <!--Optional:-->
+                  <PostalCode>?</PostalCode>
+                  <!--Optional:-->
+                  <CityName>?</CityName>
+                  <!--Optional:-->
+                  <Country>?</Country>
+                  <!--Optional:-->
+                  <District>?</District>
+                  <!--Optional:-->
+                  <Region>?</Region>
+                  <!--Optional:-->
+                  <PhoneNumber>?</PhoneNumber>
+                  <!--Optional:-->
+                  <FaxNumber>?</FaxNumber>
+                  <!--Optional:-->
+                  <CorrespondenceLanguage>?</CorrespondenceLanguage>
+               </Address>
+            </Party>
+            <!--Optional:-->
+            <PaymentTransactionInitiatorBankAccount>
+               <!--Optional:-->
+               <BankAccountStandardID>?</BankAccountStandardID>
+               <!--Optional:-->
+               <BankAccountID>?</BankAccountID>
+               <!--Optional:-->
+               <HolderName>?</HolderName>
+               <!--Optional:-->
+               <Country>?</Country>
+               <!--Optional:-->
+               <BankStandardID>?</BankStandardID>
+               <!--Optional:-->
+               <BankRoutingID>?</BankRoutingID>
+               <!--Optional:-->
+               <BankName>?</BankName>
+            </PaymentTransactionInitiatorBankAccount>
+            <!--Optional:-->
+            <PaymentTransactionDestinatedBankAccount>
+               <!--Optional:-->
+               <BankAccountStandardID>?</BankAccountStandardID>
+               <!--Optional:-->
+               <BankAccountID>?</BankAccountID>
+               <!--Optional:-->
+               <HolderName>?</HolderName>
+               <!--Optional:-->
+               <Country>?</Country>
+               <!--Optional:-->
+               <BankStandardID>?</BankStandardID>
+               <!--Optional:-->
+               <BankRoutingID>?</BankRoutingID>
+               <!--Optional:-->
+               <BankName>?</BankName>
+            </PaymentTransactionDestinatedBankAccount>
+            <!--Zero or more repetitions:-->
+            <PaymentExplanationItem>
+               <!--Optional:-->
+               <PaymentAdviceItemID>?</PaymentAdviceItemID>
+               <!--Optional:-->
+               <BusinessTransactionDocumentDate>?</BusinessTransactionDocumentDate>
+               <!--Optional:-->
+               <NetAmount currencyCode="?">?</NetAmount>
+               <!--Optional:-->
+               <GrossAmount currencyCode="?">?</GrossAmount>
+               <!--Optional:-->
+               <TransactionCurrencyGrossAmount currencyCode="?">?</TransactionCurrencyGrossAmount>
+               <!--Optional:-->
+               <CashDiscountAmount currencyCode="?">?</CashDiscountAmount>
+               <!--Optional:-->
+               <TransactionCurencyCashDiscountAmount currencyCode="?">?</TransactionCurencyCashDiscountAmount>
+               <!--Optional:-->
+               <WithholdingTaxAmount currencyCode="?">?</WithholdingTaxAmount>
+               <!--Optional:-->
+               <BankFeeAmount currencyCode="?">?</BankFeeAmount>
+               <!--Optional:-->
+               <Note languageCode="?">?</Note>
+               <!--Optional:-->
+               <PaymentReferenceID>
+                  <ID>?</ID>
+                  <!--Optional:-->
+                  <TypeCode>?</TypeCode>
+                  <!--Optional:-->
+                  <ItemID>?</ItemID>
+                  <!--Optional:-->
+                  <ItemTypeCode>?</ItemTypeCode>
+               </PaymentReferenceID>
+               <!--Zero or more repetitions:-->
+               <Party PartyType="?">
+                  <!--Optional:-->
+                  <GlobalLocationNumber>?</GlobalLocationNumber>
+                  <!--Optional:-->
+                  <BuyerPartyID>?</BuyerPartyID>
+                  <!--Optional:-->
+                  <SupplierPartyID>?</SupplierPartyID>
+                  <!--Optional:-->
+                  <Address>
+                     <!--Optional:-->
+                     <FormOfAddress>?</FormOfAddress>
+                     <!--Optional:-->
+                     <FormOfAddressName>?</FormOfAddressName>
+                     <!--Optional:-->
+                     <AddressName>?</AddressName>
+                     <!--Optional:-->
+                     <AddressAdditionalName>?</AddressAdditionalName>
+                     <!--Optional:-->
+                     <StreetName>?</StreetName>
+                     <!--Optional:-->
+                     <HouseNumber>?</HouseNumber>
+                     <!--Optional:-->
+                     <PostalCode>?</PostalCode>
+                     <!--Optional:-->
+                     <CityName>?</CityName>
+                     <!--Optional:-->
+                     <Country>?</Country>
+                     <!--Optional:-->
+                     <District>?</District>
+                     <!--Optional:-->
+                     <Region>?</Region>
+                     <!--Optional:-->
+                     <PhoneNumber>?</PhoneNumber>
+                     <!--Optional:-->
+                     <FaxNumber>?</FaxNumber>
+                     <!--Optional:-->
+                     <CorrespondenceLanguage>?</CorrespondenceLanguage>
+                  </Address>
+               </Party>
+            </PaymentExplanationItem>
+         </PaymentAdviceNotification>
+      </edi:PaymentAdviceNotification>
+   </soap:Body>
+</soap:Envelope>

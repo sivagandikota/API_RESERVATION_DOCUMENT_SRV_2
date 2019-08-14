@@ -1,0 +1,412 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SalesOrder1</groupId>
+  <artifactId>SalesOrder1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<cxf.version>3.2.6</cxf.version>
+		<httpclient.version>3.1</httpclient.version>
+		<jax.ws.rs>2.1.1</jax.ws.rs>
+		<springmvc>4.1.6.RELEASE</springmvc>
+		<jackson.version>2.9.1</jackson.version>
+		<version.olingo>2.0.10</version.olingo>
+  </properties>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.13</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    
+    </repositories>
+  <dependencies>
+  		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    
+		    <scope>provided</scope>
+		</dependency>
+	  <dependency>
+	    <groupId>com.sap.apibhub</groupId>
+	    <artifactId>com.sap.apibhub.sdk</artifactId>
+	    <scope>compile</scope>
+	  </dependency>
+	<dependency>
+    <groupId>com.sap.cloud.s4hana.datamodel</groupId>
+    <artifactId>odata-generator</artifactId>
+    <exclusions>
+      <exclusion> 
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+      </exclusion>
+      <exclusion> 
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+      </exclusion>
+	  <exclusion>
+	  		<groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+	  </exclusion>      
+    </exclusions>
+    </dependency>
+	<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <scope>provided</scope>
+	</dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana</groupId>
+            <artifactId>sdk-bom</artifactId>
+            <version>1.10.0</version>
+            <type>pom</type>
+        </dependency>
+        
+        
+        <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <scope>compile</scope>		    
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <scope>compile</scope>		    
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <scope>compile</scope>
+		</dependency>
+				
+		
+
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-bindings-soap</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-bindings-xml</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-databinding-jaxb</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-rs-extension-search</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-simple</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-management</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-transports-http</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-wsdl</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-transports-local</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-features-logging</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-ws-addr</artifactId>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-ws-policy</artifactId>
+  			<scope>compile</scope>
+  			
+  		</dependency>
+  		
+			
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- <dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>20.0</version>
+		    <scope>compile</scope>
+		</dependency> -->
+		  	
+  		<dependency>
+	    <groupId>com.sap.apibhub</groupId>
+	    <artifactId>com.sap.apibhub.sdk</artifactId>
+	    <version>1.0.0</version>
+	    <scope>compile</scope>
+	    <!-- systemPath>C:/Users/sivag/eclipse-workspace1/SalesOrder1/WebContent/WEB-INF/lib/com.sap.apibhub.sdk-1.0.0.jar</systemPath -->
+	  </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana</groupId>
+            <artifactId>sdk-bom</artifactId>
+            <version>1.10.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>5.1.2.RELEASE</version>
+		    <scope>compile</scope>
+		    
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>${springmvc}</version>
+		    <scope>compile</scope>
+		    
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>${springmvc}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		    <version>${springmvc}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${springmvc}</version>
+		</dependency>
+				
+				
+				
+				
+        
+    
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-core</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-bindings-soap</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-bindings-xml</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-databinding-jaxb</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-rs-extension-search</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-simple</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-management</artifactId>
+  			<version>3.2.6</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-transports-http</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-wsdl</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-transports-local</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-features-logging</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-ws-addr</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			<!-- <type>bundle</type> -->
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-ws-policy</artifactId>
+  			<version>${cxf.version}</version>
+  			<scope>compile</scope>
+  			
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>2.12.4</version>
+	        <scope>provided</scope>
+  		</dependency>
+  		<dependency>
+  			<groupId>com.sap.cloud.s4hana.datamodel</groupId>
+  			<artifactId>odata-generator</artifactId>
+  			<version>1.11.1</version>
+  			<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.projectlombok</groupId>
+  			<artifactId>lombok</artifactId>
+  			<version>1.18.8</version>
+  			<scope>compile</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+    
+</project>

@@ -1,0 +1,12 @@
+#Tue Jun 25 15:17:40 IST 2019
+Description=SCPDEV
+Type=HTTP
+Authentication=BasicAuthentication
+Name=SCP_DEV_CLONING
+WebIDEUsage=odata_gen
+WebIDEEnabled=true
+Password=nBhLsiwWXmfwqmX)FDLRUA6SwdCitAXUswwZwLqX
+ProxyType=Internet
+URL=https\://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/API_SALES_ORDER_SRV
+User=BHF_COMM
+WebIDESystem=S4HANA

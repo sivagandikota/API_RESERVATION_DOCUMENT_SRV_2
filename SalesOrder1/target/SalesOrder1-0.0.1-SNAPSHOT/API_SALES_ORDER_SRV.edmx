@@ -1,0 +1,567 @@
+<?xml version="1.0"?><edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"></edmx:Include>
+    </edmx:Reference>
+    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"></edmx:Include>
+    </edmx:Reference>
+    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Alias="Communication" Namespace="com.sap.vocabularies.Communication.v1"></edmx:Include>
+    </edmx:Reference>
+    <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"></edmx:Include>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xml:lang="en" sap:schema-version="1" Namespace="API_SALES_ORDER_SRV">
+            <EntityType sap:content-version="1" sap:label="Sales Order API" Name="A_SalesOrderType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" Nullable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Sales Document Type" Name="SalesOrderType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Sales Organization" Name="SalesOrganization"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Distribution Channel" Name="DistributionChannel"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Division" Name="OrganizationDivision"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Sales Group" Name="SalesGroup"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Sales Office" Name="SalesOffice"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="6" sap:label="Sales District" Name="SalesDistrict"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sold To Party" Name="SoldToParty"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:creatable="false" sap:quickinfo="Date on Which Record Was Created" sap:updatable="false" Name="CreationDate"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="12" sap:label="Created By" sap:creatable="false" sap:quickinfo="Name of Person Who Created Object" sap:updatable="false" Name="CreatedByUser"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:creatable="false" sap:quickinfo="Date of Last Change" sap:updatable="false" Name="LastChangeDate"></Property>
+                <Property Type="Edm.DateTimeOffset" Precision="7" ConcurrencyMode="Fixed" sap:label="Time Stamp" sap:creatable="false" sap:quickinfo="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)" sap:updatable="false" Name="LastChangeDateTime"></Property>
+                <Property Type="Edm.String" MaxLength="35" sap:label="Customer Reference" Name="PurchaseOrderByCustomer"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Purchase Order Type" sap:quickinfo="Customer Purchase Order Type" Name="CustomerPurchaseOrderType"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Customer Ref Date" sap:quickinfo="Customer Reference Date" Name="CustomerPurchaseOrderDate"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date" sap:quickinfo="Document Date (Date Received/Sent)" Name="SalesOrderDate"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="TransactionCurrency" Scale="3" sap:label="Net Value" sap:creatable="false" sap:quickinfo="Net Value of the Sales Order in Document Currency" sap:updatable="false" Name="TotalNetAmount"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:semantics="currency-code" sap:quickinfo="SD document currency" Name="TransactionCurrency"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Order Reason" sap:quickinfo="Order Reason (Reason for the Business Transaction)" Name="SDDocumentReason"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Pricing Date" sap:quickinfo="Date for Pricing and Exchange Rate" Name="PricingDate"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Reqd Delivery Date" sap:quickinfo="Requested Delivery Date" Name="RequestedDeliveryDate"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Shipping Conditions" Name="ShippingCondition"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Complete Delivery" sap:quickinfo="Complete Delivery Defined for Each Sales Order?" Name="CompleteDeliveryIsDefined"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Shipping Type" Name="ShippingType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Billing Block" sap:quickinfo="Billing Block in SD Document" Name="HeaderBillingBlockReason"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Delivery Block" sap:quickinfo="Delivery Block (Document Header)" Name="DeliveryBlockReason"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Incoterms" sap:quickinfo="Incoterms (Part 1)" Name="IncotermsClassification"></Property>
+                <Property Type="Edm.String" MaxLength="28" sap:label="Incoterms Part 2" Name="IncotermsTransferLocation"></Property>
+                <Property Type="Edm.String" MaxLength="70" sap:label="Incoterms Location 1" Name="IncotermsLocation1"></Property>
+                <Property Type="Edm.String" MaxLength="70" sap:label="Incoterms Location 2" Name="IncotermsLocation2"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Incoterms Version" Name="IncotermsVersion"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Terms of Payment" sap:quickinfo="Terms of Payment Key" Name="CustomerPaymentTerms"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Payment Method" Name="PaymentMethod"></Property>
+                <Property Type="Edm.String" MaxLength="18" sap:label="Assignment" sap:quickinfo="Assignment number" Name="AssignmentReference"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Overall Status" sap:creatable="false" sap:quickinfo="Overall Processing Status of Document" sap:updatable="false" Name="OverallSDProcessStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Credit Status" sap:creatable="false" sap:quickinfo="Overall Status of Credit Checks" sap:updatable="false" Name="TotalCreditCheckStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Ovrl Delivery Status" sap:creatable="false" sap:quickinfo="Overall Delivery Status for all Items" sap:updatable="false" Name="OverallTotalDeliveryStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Rejection Status" sap:creatable="false" sap:quickinfo="Overall Rejection Status of All Document Items" sap:updatable="false" Name="OverallSDDocumentRejectionSts"></Property>
+                <Property Type="Edm.String" MaxLength="20" sap:label="box" Name="YY1_box_SDH"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_42CCE6159E335C5B7697EE6BC8D37107" FromRole="FromRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" ToRole="ToRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" Name="to_Item"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_E0F0B75CE5743C11AC56990C6083E0BA" FromRole="FromRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" ToRole="ToRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" Name="to_Partner"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_44F7AAFBAB4403914DD21D2B054AE91D" FromRole="FromRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" ToRole="ToRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" Name="to_PaymentPlanItemDetails"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" FromRole="FromRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" ToRole="ToRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" Name="to_PricingElement"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_D06EF7DEC5E9B78C200493F21B05A94E" FromRole="FromRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" ToRole="ToRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" Name="to_Text"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Header Partner API" Name="A_SalesOrderHeaderPartnerType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="PartnerFunction"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Partner Function" Nullable="false" Name="PartnerFunction"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Customer" sap:quickinfo="Customer Number" Name="Customer"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Supplier" sap:quickinfo="Account Number of Supplier" Name="Supplier"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="8" sap:label="Personnel Number" Name="Personnel"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="10" sap:label="Contact Person" sap:quickinfo="Number of contact person" Name="ContactPerson"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_8F721694C94560109555442071763439" FromRole="FromRole_assoc_8F721694C94560109555442071763439" ToRole="ToRole_assoc_8F721694C94560109555442071763439" Name="to_SalesOrder"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Header Pricing Element API" Name="A_SalesOrderHeaderPrElementType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="PricingProcedureStep"></PropertyRef>
+                    <PropertyRef Name="PricingProcedureCounter"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Step Number" Nullable="false" Name="PricingProcedureStep"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Counter" sap:quickinfo="Condition Counter" Nullable="false" Name="PricingProcedureCounter"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Condition Type" Name="ConditionType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="14" sap:label="Valid From" sap:creatable="false" sap:quickinfo="Timestamp for Pricing" sap:updatable="false" Name="PricingDateTime"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Calculation Type" sap:creatable="false" sap:quickinfo="Calculation Type for Condition" sap:updatable="false" Name="ConditionCalculationType"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Basis Value" sap:creatable="false" sap:quickinfo="Condition Basis Value" sap:updatable="false" Name="ConditionBaseValue"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Amount" sap:quickinfo="Rate (Amount or Percentage)" Name="ConditionRateValue"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Currency" sap:semantics="currency-code" sap:quickinfo="Currency Key" Name="ConditionCurrency"></Property>
+                <Property Type="Edm.Decimal" Precision="5" Scale="0" sap:label="Pricing Unit" sap:quickinfo="Condition Pricing Unit" Name="ConditionQuantity"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Condition Unit" sap:semantics="unit-of-measure" sap:quickinfo="Condition Unit in the Document" Name="ConditionQuantityUnit"></Property>
+                <Property Type="Edm.String" MaxLength="1" sap:label="Condition Category" sap:creatable="false" sap:quickinfo="Condition Category (Examples: Tax, Freight, Price, Cost)" sap:updatable="false" Name="ConditionCategory"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Statistical" sap:creatable="false" sap:quickinfo="Condition is used for statistics" sap:updatable="false" Name="ConditionIsForStatistics"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Scale Type" sap:creatable="false" sap:updatable="false" Name="PricingScaleType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Origin" sap:creatable="false" sap:quickinfo="Origin of the Condition" sap:updatable="false" Name="ConditionOrigin"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Group Condition" sap:creatable="false" sap:updatable="false" Name="IsGroupCondition"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Condition Record No" sap:creatable="false" sap:quickinfo="Condition record number" sap:updatable="false" Name="ConditionRecord"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Sequent No of Cond" sap:creatable="false" sap:quickinfo="Sequential Number of the Condition" sap:updatable="false" Name="ConditionSequentialNumber"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Tax Code" sap:creatable="false" sap:quickinfo="Tax on Sales/Purchases Code" sap:updatable="false" Name="TaxCode"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="W tax code" sap:creatable="false" sap:quickinfo="Withholding tax code" sap:updatable="false" Name="WithholdingTaxCode"></Property>
+                <Property Type="Edm.Decimal" Precision="6" sap:unit="TransactionCurrency" Scale="3" sap:label="Cond Rounding Diff " sap:creatable="false" sap:quickinfo="Rounding-Off Difference of the Condition" sap:updatable="false" Name="CndnRoundingOffDiffAmount"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="TransactionCurrency" Scale="3" sap:label="Value" sap:creatable="false" sap:quickinfo="Condition Value" sap:updatable="false" Name="ConditionAmount"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:semantics="currency-code" sap:quickinfo="SD document currency" Name="TransactionCurrency"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Control" sap:creatable="false" sap:updatable="false" Name="ConditionControl"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Inactive Condition" sap:creatable="false" sap:quickinfo="Condition is Inactive" sap:updatable="false" Name="ConditionInactiveReason"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Class" sap:creatable="false" sap:updatable="false" Name="ConditionClass"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Counter for header" sap:creatable="false" sap:quickinfo="Condition Counter (Header)" sap:updatable="false" Name="PrcgProcedureCounterForHeader"></Property>
+                <Property Type="Edm.Double" sap:label="Condition Factor " sap:creatable="false" sap:quickinfo="Factor for Condition Base Value" sap:updatable="false" Name="FactorForConditionBasisValue"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Structure Condition" sap:creatable="false" sap:updatable="false" Name="StructureCondition"></Property>
+                <Property Type="Edm.Double" sap:label="Condition Factor period factor" sap:creatable="false" sap:quickinfo="Factor for Condition Basis (Period)" sap:updatable="false" Name="PeriodFactorForCndnBasisValue"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Scale Basis" sap:creatable="false" sap:quickinfo="Scale Basis Indicator" sap:updatable="false" Name="PricingScaleBasis"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Scale Basis Value" sap:creatable="false" sap:updatable="false" Name="ConditionScaleBasisValue"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Scale Unit of Meas" sap:creatable="false" sap:semantics="unit-of-measure" sap:quickinfo="Condition Scale Unit of Measure" sap:updatable="false" Name="ConditionScaleBasisUnit"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Scale Currency" sap:creatable="false" sap:semantics="currency-code" sap:updatable="false" Name="ConditionScaleBasisCurrency"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Intercomp Billing" sap:creatable="false" sap:quickinfo="Condition for Intercompany Billing" sap:updatable="false" Name="CndnIsRelevantForIntcoBilling"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Changed Manually" sap:creatable="false" sap:quickinfo="Condition Changed Manually" sap:updatable="false" Name="ConditionIsManuallyChanged"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Variant Condition" sap:creatable="false" sap:quickinfo="Condition for Configuration" sap:updatable="false" Name="ConditionIsForConfiguration"></Property>
+                <Property Type="Edm.String" MaxLength="26" sap:label="Variant" sap:creatable="false" sap:quickinfo="Variant condition" sap:updatable="false" Name="VariantCondition"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_C516ABBC5925268953A9AC7D6F836887" FromRole="FromRole_assoc_C516ABBC5925268953A9AC7D6F836887" ToRole="ToRole_assoc_C516ABBC5925268953A9AC7D6F836887" Name="to_SalesOrder"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Item API" Name="A_SalesOrderItemType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="SalesOrderItem"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:text="SalesOrderItemText" sap:label="Item" sap:quickinfo="Sales Order Item" Nullable="false" Name="SalesOrderItem"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Higher Level Item" sap:quickinfo="Higher-Level item in bill of material structures" Name="HigherLevelItem"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Item Category" sap:quickinfo="Sales Document Item Category" Name="SalesOrderItemCategory"></Property>
+                <Property Type="Edm.String" MaxLength="40" sap:label="Item Description" sap:quickinfo="Short Text for Sales Order Item" Name="SalesOrderItemText"></Property>
+                <Property Type="Edm.String" MaxLength="35" sap:label="Customer Reference" Name="PurchaseOrderByCustomer"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="40" sap:label="Material" sap:quickinfo="Material Number" Name="Material"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="35" sap:label="Customer Material" sap:quickinfo="Material Number Used by Customer" Name="MaterialByCustomer"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Pricing Date" sap:quickinfo="Date for Pricing and Exchange Rate" Name="PricingDate"></Property>
+                <Property Type="Edm.Decimal" Precision="15" sap:unit="RequestedQuantityUnit" Scale="3" sap:label="Requested Quantity" Name="RequestedQuantity"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Requested Qty Unit" sap:semantics="unit-of-measure" sap:quickinfo="Requested Quantity Unit" Name="RequestedQuantityUnit"></Property>
+                <Property Type="Edm.Decimal" Precision="15" sap:unit="ItemWeightUnit" Scale="3" sap:label="Gross Weight" sap:creatable="false" sap:quickinfo="Gross Weight of the Item" sap:updatable="false" Name="ItemGrossWeight"></Property>
+                <Property Type="Edm.Decimal" Precision="15" sap:unit="ItemWeightUnit" Scale="3" sap:label="Net Weight" sap:creatable="false" sap:quickinfo="Net Weight of the Item" sap:updatable="false" Name="ItemNetWeight"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Unit of Weight" sap:creatable="false" sap:semantics="unit-of-measure" sap:updatable="false" Name="ItemWeightUnit"></Property>
+                <Property Type="Edm.Decimal" Precision="15" sap:unit="ItemVolumeUnit" Scale="3" sap:label="Volume" sap:creatable="false" sap:quickinfo="Volume of the item" sap:updatable="false" Name="ItemVolume"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Volume Unit" sap:creatable="false" sap:semantics="unit-of-measure" sap:updatable="false" Name="ItemVolumeUnit"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:creatable="false" sap:semantics="currency-code" sap:quickinfo="SD document currency" sap:updatable="false" Name="TransactionCurrency"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="TransactionCurrency" Scale="3" sap:label="Net Value" sap:creatable="false" sap:quickinfo="Net Value of the Order Item in Document Currency" sap:updatable="false" Name="NetAmount"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="9" sap:label="Material Group" Name="MaterialGroup"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Material Price Grp" sap:quickinfo="Material Price Group" Name="MaterialPricingGroup"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Batch" sap:quickinfo="Batch Number" Name="Batch"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Plant" sap:quickinfo="Plant (Own or External)" Name="ProductionPlant"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Storage Location" Name="StorageLocation"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Delivery Group" sap:quickinfo="Delivery Group (Items are delivered together)" Name="DeliveryGroup"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Shipping Point" sap:quickinfo="Shipping Point/Receiving Point" Name="ShippingPoint"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Shipping Type" Name="ShippingType"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="2" sap:label="Delivery Priority" Name="DeliveryPriority"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Incoterms" sap:quickinfo="Incoterms (Part 1)" Name="IncotermsClassification"></Property>
+                <Property Type="Edm.String" MaxLength="28" sap:label="Incoterms Part 2" Name="IncotermsTransferLocation"></Property>
+                <Property Type="Edm.String" MaxLength="70" sap:label="Incoterms Location 1" Name="IncotermsLocation1"></Property>
+                <Property Type="Edm.String" MaxLength="70" sap:label="Incoterms Location 2" Name="IncotermsLocation2"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Terms of Payment" sap:quickinfo="Terms of Payment Key" Name="CustomerPaymentTerms"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Reason for Rejection" sap:quickinfo="Reason for Rejection of Sales Documents" Name="SalesDocumentRjcnReason"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Billing Block" sap:quickinfo="Billing Block for Item" Name="ItemBillingBlockReason"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="24" sap:label="WBS Element" sap:quickinfo="Work Breakdown Structure Element (WBS Element)" Name="WBSElement"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Profit Center" Name="ProfitCenter"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Overall Status" sap:creatable="false" sap:quickinfo="Overall Processing Status of the SD Document Item" sap:updatable="false" Name="SDProcessStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Delivery Status" sap:creatable="false" sap:updatable="false" Name="DeliveryStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Billing Status" sap:creatable="false" sap:quickinfo="Billing Status for Order-Related Billing Documents" sap:updatable="false" Name="OrderRelatedBillingStatus"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_5EBE73B545500EE6B48597931F7D5C56" FromRole="FromRole_assoc_5EBE73B545500EE6B48597931F7D5C56" ToRole="ToRole_assoc_5EBE73B545500EE6B48597931F7D5C56" Name="to_Partner"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_A18E7EFDF1ADD05474B187D10B62BDBF" FromRole="FromRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" ToRole="ToRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" Name="to_PricingElement"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" FromRole="FromRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" ToRole="ToRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" Name="to_SalesOrder"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_31BB747044FCC7AA5DA94B21FD458954" FromRole="FromRole_assoc_31BB747044FCC7AA5DA94B21FD458954" ToRole="ToRole_assoc_31BB747044FCC7AA5DA94B21FD458954" Name="to_ScheduleLine"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_3604F4165550FA74B882A4F3345D936F" FromRole="FromRole_assoc_3604F4165550FA74B882A4F3345D936F" ToRole="ToRole_assoc_3604F4165550FA74B882A4F3345D936F" Name="to_Text"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Item Partner API" Name="A_SalesOrderItemPartnerType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="SalesOrderItem"></PropertyRef>
+                    <PropertyRef Name="PartnerFunction"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Item" sap:creatable="false" sap:quickinfo="Sales Order Item" Nullable="false" sap:updatable="false" Name="SalesOrderItem"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Partner Function" Nullable="false" Name="PartnerFunction"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Customer" sap:quickinfo="Customer Number" Name="Customer"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Supplier" sap:quickinfo="Account Number of Supplier" Name="Supplier"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="8" sap:label="Personnel Number" Name="Personnel"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="10" sap:label="Contact Person" sap:quickinfo="Number of contact person" Name="ContactPerson"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" FromRole="FromRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" ToRole="ToRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" Name="to_SalesOrder"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_2E7827BA025D2DC7290DEA3E71FF39FB" FromRole="FromRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" ToRole="ToRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" Name="to_SalesOrderItem"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Item Pricing Element API" Name="A_SalesOrderItemPrElementType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="SalesOrderItem"></PropertyRef>
+                    <PropertyRef Name="PricingProcedureStep"></PropertyRef>
+                    <PropertyRef Name="PricingProcedureCounter"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Item" sap:creatable="false" sap:quickinfo="Sales Order Item" Nullable="false" sap:updatable="false" Name="SalesOrderItem"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Step Number" Nullable="false" Name="PricingProcedureStep"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Counter" sap:quickinfo="Condition Counter" Nullable="false" Name="PricingProcedureCounter"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Condition Type" Name="ConditionType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="14" sap:label="Valid From" sap:creatable="false" sap:quickinfo="Timestamp for Pricing" sap:updatable="false" Name="PricingDateTime"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Calculation Type" sap:creatable="false" sap:quickinfo="Calculation Type for Condition" sap:updatable="false" Name="ConditionCalculationType"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Basis Value" sap:creatable="false" sap:quickinfo="Condition Basis Value" sap:updatable="false" Name="ConditionBaseValue"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Amount" sap:quickinfo="Rate (Amount or Percentage)" Name="ConditionRateValue"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Currency" sap:semantics="currency-code" sap:quickinfo="Currency Key" Name="ConditionCurrency"></Property>
+                <Property Type="Edm.Decimal" Precision="5" sap:unit="ConditionQuantityUnit" Scale="0" sap:label="Pricing Unit" sap:quickinfo="Condition Pricing Unit" Name="ConditionQuantity"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Condition Unit" sap:semantics="unit-of-measure" sap:quickinfo="Condition Unit in the Document" Name="ConditionQuantityUnit"></Property>
+                <Property Type="Edm.String" MaxLength="1" sap:label="Condition Category" sap:creatable="false" sap:quickinfo="Condition Category (Examples: Tax, Freight, Price, Cost)" sap:updatable="false" Name="ConditionCategory"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Statistical" sap:creatable="false" sap:quickinfo="Condition is used for statistics" sap:updatable="false" Name="ConditionIsForStatistics"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Scale Type" sap:creatable="false" sap:updatable="false" Name="PricingScaleType"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Accruals" sap:creatable="false" sap:quickinfo="Condition is Relevant for Accrual  (e.g. Freight)" sap:updatable="false" Name="IsRelevantForAccrual"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Invoice List Cond" sap:creatable="false" sap:quickinfo="Condition for Invoice List" sap:updatable="false" Name="CndnIsRelevantForInvoiceList"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Origin" sap:creatable="false" sap:quickinfo="Origin of the Condition" sap:updatable="false" Name="ConditionOrigin"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Group Condition" sap:creatable="false" sap:updatable="false" Name="IsGroupCondition"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Condition Record No" sap:creatable="false" sap:quickinfo="Condition record number" sap:updatable="false" Name="ConditionRecord"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Sequent No  of Cond" sap:creatable="false" sap:quickinfo="Sequential Number of the Condition" sap:updatable="false" Name="ConditionSequentialNumber"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Tax Code" sap:creatable="false" sap:quickinfo="Tax on Sales/Purchases Code" sap:updatable="false" Name="TaxCode"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="W tax code" sap:creatable="false" sap:quickinfo="Withholding tax code" sap:updatable="false" Name="WithholdingTaxCode"></Property>
+                <Property Type="Edm.Decimal" Precision="6" Scale="3" sap:label="Cond Rounding Diff" sap:creatable="false" sap:quickinfo="Rounding-Off Difference of the Condition" sap:updatable="false" Name="CndnRoundingOffDiffAmount"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="TransactionCurrency" Scale="3" sap:label="Value" sap:creatable="false" sap:quickinfo="Condition Value" sap:updatable="false" Name="ConditionAmount"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Document Currency" sap:semantics="currency-code" sap:quickinfo="SD document currency" Name="TransactionCurrency"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Control" sap:creatable="false" sap:updatable="false" Name="ConditionControl"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Inactive Condition" sap:creatable="false" sap:quickinfo="Condition is Inactive" sap:updatable="false" Name="ConditionInactiveReason"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Condition Class" sap:creatable="false" sap:updatable="false" Name="ConditionClass"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="3" sap:label="Counter for header" sap:creatable="false" sap:quickinfo="Condition Counter (Header)" sap:updatable="false" Name="PrcgProcedureCounterForHeader"></Property>
+                <Property Type="Edm.Double" sap:label="Condition Factor" sap:creatable="false" sap:quickinfo="Factor for Condition Base Value" sap:updatable="false" Name="FactorForConditionBasisValue"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Structure Condition" sap:creatable="false" sap:updatable="false" Name="StructureCondition"></Property>
+                <Property Type="Edm.Double" sap:label="Condition Factor period" sap:creatable="false" sap:quickinfo="Factor for Condition Basis (Period)" sap:updatable="false" Name="PeriodFactorForCndnBasisValue"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="3" sap:label="Scale Basis" sap:creatable="false" sap:quickinfo="Scale Basis Indicator" sap:updatable="false" Name="PricingScaleBasis"></Property>
+                <Property Type="Edm.Decimal" Precision="24" Scale="9" sap:label="Scale Basis Value" sap:creatable="false" sap:updatable="false" Name="ConditionScaleBasisValue"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Scale Unit of Meas" sap:creatable="false" sap:semantics="unit-of-measure" sap:quickinfo="Condition Scale Unit of Measure" sap:updatable="false" Name="ConditionScaleBasisUnit"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Scale Currency" sap:creatable="false" sap:semantics="currency-code" sap:updatable="false" Name="ConditionScaleBasisCurrency"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Intercomp Billing" sap:creatable="false" sap:quickinfo="Condition for Intercompany Billing" sap:updatable="false" Name="CndnIsRelevantForIntcoBilling"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Changed Manually" sap:creatable="false" sap:quickinfo="Condition Changed Manually" sap:updatable="false" Name="ConditionIsManuallyChanged"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Variant Condition" sap:creatable="false" sap:quickinfo="Condition for Configuration" sap:updatable="false" Name="ConditionIsForConfiguration"></Property>
+                <Property Type="Edm.String" MaxLength="26" sap:label="Variant" sap:creatable="false" sap:quickinfo="Variant condition" sap:updatable="false" Name="VariantCondition"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_3BF40B19B8B1DF0736F165DBAFECEE42" FromRole="FromRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" ToRole="ToRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" Name="to_SalesOrder"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_0FC12A865A38C45D885A046A7BD1FA20" FromRole="FromRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" ToRole="ToRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" Name="to_SalesOrderItem"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Item Text API" Name="A_SalesOrderItemTextType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="SalesOrderItem"></PropertyRef>
+                    <PropertyRef Name="Language"></PropertyRef>
+                    <PropertyRef Name="LongTextID"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Item" sap:creatable="false" sap:quickinfo="Sales Order Item" Nullable="false" sap:updatable="false" Name="SalesOrderItem"></Property>
+                <Property Type="Edm.String" MaxLength="2" sap:label="Language Key" Nullable="false" Name="Language"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Text ID" Nullable="false" Name="LongTextID"></Property>
+                <Property Type="Edm.String" sap:filterable="false" sap:label="Long text" sap:creatable="false" sap:sortable="false" sap:quickinfo="String" sap:updatable="false" Name="LongText"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_802E52C3F27DB910494E51738146B8F5" FromRole="FromRole_assoc_802E52C3F27DB910494E51738146B8F5" ToRole="ToRole_assoc_802E52C3F27DB910494E51738146B8F5" Name="to_SalesOrder"></NavigationProperty>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" FromRole="FromRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" ToRole="ToRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" Name="to_SalesOrderItem"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Schedule Line API" Name="A_SalesOrderScheduleLineType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="SalesOrderItem"></PropertyRef>
+                    <PropertyRef Name="ScheduleLine"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Document" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Sales Document Item" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrderItem"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="4" sap:label="Schedule Line Number" Nullable="false" Name="ScheduleLine"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Delivery Date requested" sap:quickinfo="Requested Delivery Date" Name="RequestedDeliveryDate"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Delivery Date" sap:quickinfo="Confirmed Delivery Date" Name="ConfirmedDeliveryDate"></Property>
+                <Property Type="Edm.String" MaxLength="3" sap:label="Sales Unit" sap:semantics="unit-of-measure" Name="OrderQuantityUnit"></Property>
+                <Property Type="Edm.Decimal" Precision="13" sap:unit="OrderQuantityUnit" Scale="3" sap:label="Order Quantity" sap:quickinfo="Order Quantity in Sales Units" Name="ScheduleLineOrderQuantity"></Property>
+                <Property Type="Edm.Decimal" Precision="13" sap:unit="OrderQuantityUnit" Scale="3" sap:label="Confirmed Quantity" Name="ConfdOrderQtyByMatlAvailCheck"></Property>
+                <Property Type="Edm.Decimal" Precision="13" sap:unit="OrderQuantityUnit" Scale="3" sap:label="Delivered Quantity" Name="DeliveredQtyInOrderQtyUnit"></Property>
+                <Property Type="Edm.Decimal" Precision="13" sap:unit="OrderQuantityUnit" Scale="3" sap:label="Open Quantity" sap:quickinfo="Open Confirmed Delivery Quantity" Name="OpenConfdDelivQtyInOrdQtyUnit"></Property>
+                <Property Type="Edm.Decimal" Precision="13" sap:unit="OrderQuantityUnit" Scale="3" sap:label="Corr qty" sap:quickinfo="Corrected quantity in sales unit" Name="CorrectedQtyInOrderQtyUnit"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="2" sap:label="Delivery Block" sap:quickinfo="Schedule Line Blocked for Delivery" Name="DelivBlockReasonForSchedLine"></Property>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Text API" Name="A_SalesOrderTextType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="Language"></PropertyRef>
+                    <PropertyRef Name="LongTextID"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" MaxLength="2" sap:label="Language Key" Nullable="false" Name="Language"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="Text ID" Nullable="false" Name="LongTextID"></Property>
+                <Property Type="Edm.String" sap:filterable="false" sap:label="Text" sap:creatable="false" sap:sortable="false" sap:quickinfo="String" sap:updatable="false" Name="LongText"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_9211CD1FA0A3B03DDB30735294259743" FromRole="FromRole_assoc_9211CD1FA0A3B03DDB30735294259743" ToRole="ToRole_assoc_9211CD1FA0A3B03DDB30735294259743" Name="to_SalesOrder"></NavigationProperty>
+            </EntityType>
+            <EntityType sap:content-version="1" sap:label="Sales Order Payment Plan Item Details API" Name="A_SlsOrdPaymentPlanItemDetailsType">
+                <Key>
+                    <PropertyRef Name="SalesOrder"></PropertyRef>
+                    <PropertyRef Name="PaymentPlanItem"></PropertyRef>
+                </Key>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Sales Order" sap:creatable="false" Nullable="false" sap:updatable="false" Name="SalesOrder"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Item" sap:quickinfo="Item for billing plan/invoice plan/payment cards" Nullable="false" Name="PaymentPlanItem"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Bill Plan No" sap:creatable="false" sap:quickinfo="Billing Plan Number / Invoicing Plan Number" sap:updatable="false" Name="PaymentPlan"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="4" sap:label="EPayt Type" sap:quickinfo="Electronic Payment: Payment Type" Name="ElectronicPaymentType"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="25" sap:label="Account Number" sap:quickinfo="Electronic Payment: Account Number" Name="ElectronicPayment"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="EPayt Valid from" sap:quickinfo="Electronic Payment: Valid from" Name="EPaytValidityStartDate"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="EPayt Valid to" sap:quickinfo="Electronic Payment: Valid to" Name="EPaytValidityEndDate"></Property>
+                <Property Type="Edm.String" MaxLength="40" sap:label="Account Holder" sap:quickinfo="Electronic Payment: Name of Account Holder" Name="ElectronicPaymentHolderName"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="AuthorizationCurrency" Scale="3" sap:label="Authorized Amount" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorized Amount" sap:updatable="false" Name="AuthorizedAmountInAuthznCrcy"></Property>
+                <Property Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:semantics="currency-code" sap:quickinfo="Currency Key" sap:updatable="false" Name="AuthorizationCurrency"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Auth Number" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorization Number" sap:updatable="false" Name="AuthorizationByDigitalPaytSrvc"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="15" sap:label="Auth Ref Code" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorization Reference Code" sap:updatable="false" Name="AuthorizationByAcquirer"></Property>
+                <Property Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="EPayt Auth Date" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorization Date" sap:updatable="false" Name="AuthorizationDate"></Property>
+                <Property Type="Edm.Time" Precision="0" sap:label="EPayt Auth Time" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorization Time" sap:updatable="false" Name="AuthorizationTime"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="25" sap:label="EPayt Token" sap:quickinfo="Token for Digital Payment Integration in SD" Name="EPaytByDigitalPaymentSrvc"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Call Status" sap:creatable="false" sap:quickinfo="Electronic Payment: Call Status" sap:updatable="false" Name="ElectronicPaymentCallStatus"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="1" sap:label="Rsp to Auth Check" sap:creatable="false" sap:quickinfo="Electronic Payment: Response to Authorization Checks" sap:updatable="false" Name="EPaytAuthorizationResult"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="AuthorizationCurrency" Scale="3" sap:label="Amt to Be Auth" sap:creatable="false" sap:quickinfo="Electronic Payment: Amount to Be Authorized" sap:updatable="false" Name="EPaytToBeAuthorizedAmount"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Auth Expired" sap:creatable="false" sap:quickinfo="Electronic Payment: Authorization Expired" sap:updatable="false" Name="EPaytAuthorizationIsExpired"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Amount Changed" sap:creatable="false" sap:quickinfo="Electronic Payment: Amount Changed" sap:updatable="false" Name="EPaytAmountIsChanged"></Property>
+                <Property Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Preauthorization" sap:creatable="false" sap:quickinfo="Electronic Payment: Preauthorization" sap:updatable="false" Name="PreauthorizationIsRequested"></Property>
+                <Property Type="Edm.Decimal" Precision="16" sap:unit="AuthorizationCurrency" Scale="3" sap:label="Billing Value" sap:quickinfo="Value to be billed/calc. on date in billing/invoice plan" Name="MaximumToBeAuthorizedAmount"></Property>
+                <Property Type="Edm.String" sap:display-format="UpperCase" MaxLength="10" sap:label="Higher level plan" sap:creatable="false" sap:quickinfo="Higher-level payment card plan number for billing" sap:updatable="false" Name="PaytPlnForAuthorizationItem"></Property>
+                <Property Type="Edm.String" sap:display-format="NonNegative" MaxLength="6" sap:label="Higher level item" sap:creatable="false" sap:quickinfo="Higher-level item in billing plan" sap:updatable="false" Name="PaytPlnItmForAuthorizationItem"></Property>
+                <NavigationProperty Relationship="API_SALES_ORDER_SRV.assoc_11F73D17E966CAF8365A0A85432C45F3" FromRole="FromRole_assoc_11F73D17E966CAF8365A0A85432C45F3" ToRole="ToRole_assoc_11F73D17E966CAF8365A0A85432C45F3" Name="to_SalesOrder"></NavigationProperty>
+            </EntityType>
+            <Association sap:content-version="1" Name="assoc_3BF40B19B8B1DF0736F165DBAFECEE42">
+                <End Role="FromRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPrElementType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_0FC12A865A38C45D885A046A7BD1FA20">
+                <End Role="FromRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPrElementType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_8F721694C94560109555442071763439">
+                <End Role="FromRole_assoc_8F721694C94560109555442071763439" Type="API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_8F721694C94560109555442071763439" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_E0F0B75CE5743C11AC56990C6083E0BA">
+                <End Role="FromRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" Type="API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_44F7AAFBAB4403914DD21D2B054AE91D">
+                <End Role="FromRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" Type="API_SALES_ORDER_SRV.A_SlsOrdPaymentPlanItemDetailsType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21">
+                <End Role="FromRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" Type="API_SALES_ORDER_SRV.A_SalesOrderHeaderPrElementType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_D06EF7DEC5E9B78C200493F21B05A94E">
+                <End Role="FromRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" Type="API_SALES_ORDER_SRV.A_SalesOrderTextType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_42CCE6159E335C5B7697EE6BC8D37107">
+                <End Role="FromRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_802E52C3F27DB910494E51738146B8F5">
+                <End Role="FromRole_assoc_802E52C3F27DB910494E51738146B8F5" Type="API_SALES_ORDER_SRV.A_SalesOrderItemTextType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_802E52C3F27DB910494E51738146B8F5" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0">
+                <End Role="FromRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" Type="API_SALES_ORDER_SRV.A_SalesOrderItemTextType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00">
+                <End Role="FromRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPartnerType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_2E7827BA025D2DC7290DEA3E71FF39FB">
+                <End Role="FromRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPartnerType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_9211CD1FA0A3B03DDB30735294259743">
+                <End Role="FromRole_assoc_9211CD1FA0A3B03DDB30735294259743" Type="API_SALES_ORDER_SRV.A_SalesOrderTextType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_9211CD1FA0A3B03DDB30735294259743" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_5EBE73B545500EE6B48597931F7D5C56">
+                <End Role="FromRole_assoc_5EBE73B545500EE6B48597931F7D5C56" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_5EBE73B545500EE6B48597931F7D5C56" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPartnerType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_A18E7EFDF1ADD05474B187D10B62BDBF">
+                <End Role="FromRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" Type="API_SALES_ORDER_SRV.A_SalesOrderItemPrElementType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD">
+                <End Role="FromRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_31BB747044FCC7AA5DA94B21FD458954">
+                <End Role="FromRole_assoc_31BB747044FCC7AA5DA94B21FD458954" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_31BB747044FCC7AA5DA94B21FD458954" Type="API_SALES_ORDER_SRV.A_SalesOrderScheduleLineType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_3604F4165550FA74B882A4F3345D936F">
+                <End Role="FromRole_assoc_3604F4165550FA74B882A4F3345D936F" Type="API_SALES_ORDER_SRV.A_SalesOrderItemType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_3604F4165550FA74B882A4F3345D936F" Type="API_SALES_ORDER_SRV.A_SalesOrderItemTextType" Multiplicity="*"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_11F73D17E966CAF8365A0A85432C45F3">
+                <End Role="FromRole_assoc_11F73D17E966CAF8365A0A85432C45F3" Type="API_SALES_ORDER_SRV.A_SlsOrdPaymentPlanItemDetailsType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_11F73D17E966CAF8365A0A85432C45F3" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <Association sap:content-version="1" Name="assoc_C516ABBC5925268953A9AC7D6F836887">
+                <End Role="FromRole_assoc_C516ABBC5925268953A9AC7D6F836887" Type="API_SALES_ORDER_SRV.A_SalesOrderHeaderPrElementType" Multiplicity="1"></End>
+                <End Role="ToRole_assoc_C516ABBC5925268953A9AC7D6F836887" Type="API_SALES_ORDER_SRV.A_SalesOrderType" Multiplicity="1"></End>
+            </Association>
+            <EntityContainer m:IsDefaultEntityContainer="true" Name="API_SALES_ORDER_SRV_Entities" sap:supported-formats="atom json xlsx">
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderType" sap:content-version="1" Name="A_SalesOrder"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderHeaderPartnerType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderHeaderPartner"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderHeaderPrElementType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderHeaderPrElement"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemType" sap:content-version="1" Name="A_SalesOrderItem"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemPartnerType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderItemPartner"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemPrElementType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderItemPrElement"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderItemTextType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderItemText"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderScheduleLineType" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="A_SalesOrderScheduleLine" sap:deletable="false"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SalesOrderTextType" sap:content-version="1" sap:creatable="false" Name="A_SalesOrderText"></EntitySet>
+                <EntitySet EntityType="API_SALES_ORDER_SRV.A_SlsOrdPaymentPlanItemDetailsType" sap:content-version="1" sap:creatable="false" Name="A_SlsOrdPaymentPlanItemDetails"></EntitySet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_802E52C3F27DB910494E51738146B8F5" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_802E52C3F27DB910494E51738146B8F5" sap:deletable="false">
+                    <End Role="FromRole_assoc_802E52C3F27DB910494E51738146B8F5" EntitySet="A_SalesOrderItemText"></End>
+                    <End Role="ToRole_assoc_802E52C3F27DB910494E51738146B8F5" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_8F721694C94560109555442071763439" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_8F721694C94560109555442071763439" sap:deletable="false">
+                    <End Role="FromRole_assoc_8F721694C94560109555442071763439" EntitySet="A_SalesOrderHeaderPartner"></End>
+                    <End Role="ToRole_assoc_8F721694C94560109555442071763439" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" sap:deletable="false">
+                    <End Role="FromRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" EntitySet="A_SalesOrderItemPartner"></End>
+                    <End Role="ToRole_assoc_DC6F0BF95AA2ABDAA77BD5D5D7640C00" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" sap:deletable="false">
+                    <End Role="FromRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" EntitySet="A_SalesOrderItem"></End>
+                    <End Role="ToRole_assoc_1E8A9B3CA2EE8DAD94F8F581B21EABBD" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_2E7827BA025D2DC7290DEA3E71FF39FB" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_2E7827BA025D2DC7290DEA3E71FF39FB" sap:deletable="false">
+                    <End Role="FromRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" EntitySet="A_SalesOrderItemPartner"></End>
+                    <End Role="ToRole_assoc_2E7827BA025D2DC7290DEA3E71FF39FB" EntitySet="A_SalesOrderItem"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_A18E7EFDF1ADD05474B187D10B62BDBF" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_A18E7EFDF1ADD05474B187D10B62BDBF" sap:deletable="false">
+                    <End Role="FromRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" EntitySet="A_SalesOrderItem"></End>
+                    <End Role="ToRole_assoc_A18E7EFDF1ADD05474B187D10B62BDBF" EntitySet="A_SalesOrderItemPrElement"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_42CCE6159E335C5B7697EE6BC8D37107" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_42CCE6159E335C5B7697EE6BC8D37107" sap:deletable="false">
+                    <End Role="FromRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" EntitySet="A_SalesOrder"></End>
+                    <End Role="ToRole_assoc_42CCE6159E335C5B7697EE6BC8D37107" EntitySet="A_SalesOrderItem"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_0FC12A865A38C45D885A046A7BD1FA20" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_0FC12A865A38C45D885A046A7BD1FA20" sap:deletable="false">
+                    <End Role="FromRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" EntitySet="A_SalesOrderItemPrElement"></End>
+                    <End Role="ToRole_assoc_0FC12A865A38C45D885A046A7BD1FA20" EntitySet="A_SalesOrderItem"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_D06EF7DEC5E9B78C200493F21B05A94E" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_D06EF7DEC5E9B78C200493F21B05A94E" sap:deletable="false">
+                    <End Role="FromRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" EntitySet="A_SalesOrder"></End>
+                    <End Role="ToRole_assoc_D06EF7DEC5E9B78C200493F21B05A94E" EntitySet="A_SalesOrderText"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" sap:deletable="false">
+                    <End Role="FromRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" EntitySet="A_SalesOrder"></End>
+                    <End Role="ToRole_assoc_5C52AA5C0E6EBBDD6C9EA9E0A4FFAE21" EntitySet="A_SalesOrderHeaderPrElement"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_3BF40B19B8B1DF0736F165DBAFECEE42" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_3BF40B19B8B1DF0736F165DBAFECEE42" sap:deletable="false">
+                    <End Role="FromRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" EntitySet="A_SalesOrderItemPrElement"></End>
+                    <End Role="ToRole_assoc_3BF40B19B8B1DF0736F165DBAFECEE42" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_3604F4165550FA74B882A4F3345D936F" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_3604F4165550FA74B882A4F3345D936F" sap:deletable="false">
+                    <End Role="FromRole_assoc_3604F4165550FA74B882A4F3345D936F" EntitySet="A_SalesOrderItem"></End>
+                    <End Role="ToRole_assoc_3604F4165550FA74B882A4F3345D936F" EntitySet="A_SalesOrderItemText"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_31BB747044FCC7AA5DA94B21FD458954" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_31BB747044FCC7AA5DA94B21FD458954" sap:deletable="false">
+                    <End Role="FromRole_assoc_31BB747044FCC7AA5DA94B21FD458954" EntitySet="A_SalesOrderItem"></End>
+                    <End Role="ToRole_assoc_31BB747044FCC7AA5DA94B21FD458954" EntitySet="A_SalesOrderScheduleLine"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_44F7AAFBAB4403914DD21D2B054AE91D" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_44F7AAFBAB4403914DD21D2B054AE91D" sap:deletable="false">
+                    <End Role="FromRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" EntitySet="A_SalesOrder"></End>
+                    <End Role="ToRole_assoc_44F7AAFBAB4403914DD21D2B054AE91D" EntitySet="A_SlsOrdPaymentPlanItemDetails"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" sap:deletable="false">
+                    <End Role="FromRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" EntitySet="A_SalesOrderItemText"></End>
+                    <End Role="ToRole_assoc_CAC77A6CEA49335D6F6A2CC8AC8469E0" EntitySet="A_SalesOrderItem"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_11F73D17E966CAF8365A0A85432C45F3" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_11F73D17E966CAF8365A0A85432C45F3" sap:deletable="false">
+                    <End Role="FromRole_assoc_11F73D17E966CAF8365A0A85432C45F3" EntitySet="A_SlsOrdPaymentPlanItemDetails"></End>
+                    <End Role="ToRole_assoc_11F73D17E966CAF8365A0A85432C45F3" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_C516ABBC5925268953A9AC7D6F836887" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_C516ABBC5925268953A9AC7D6F836887" sap:deletable="false">
+                    <End Role="FromRole_assoc_C516ABBC5925268953A9AC7D6F836887" EntitySet="A_SalesOrderHeaderPrElement"></End>
+                    <End Role="ToRole_assoc_C516ABBC5925268953A9AC7D6F836887" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_E0F0B75CE5743C11AC56990C6083E0BA" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_E0F0B75CE5743C11AC56990C6083E0BA" sap:deletable="false">
+                    <End Role="FromRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" EntitySet="A_SalesOrder"></End>
+                    <End Role="ToRole_assoc_E0F0B75CE5743C11AC56990C6083E0BA" EntitySet="A_SalesOrderHeaderPartner"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_9211CD1FA0A3B03DDB30735294259743" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_9211CD1FA0A3B03DDB30735294259743" sap:deletable="false">
+                    <End Role="FromRole_assoc_9211CD1FA0A3B03DDB30735294259743" EntitySet="A_SalesOrderText"></End>
+                    <End Role="ToRole_assoc_9211CD1FA0A3B03DDB30735294259743" EntitySet="A_SalesOrder"></End>
+                </AssociationSet>
+                <AssociationSet Association="API_SALES_ORDER_SRV.assoc_5EBE73B545500EE6B48597931F7D5C56" sap:content-version="1" sap:creatable="false" sap:updatable="false" Name="assoc_5EBE73B545500EE6B48597931F7D5C56" sap:deletable="false">
+                    <End Role="FromRole_assoc_5EBE73B545500EE6B48597931F7D5C56" EntitySet="A_SalesOrderItem"></End>
+                    <End Role="ToRole_assoc_5EBE73B545500EE6B48597931F7D5C56" EntitySet="A_SalesOrderItemPartner"></End>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.API_SALES_ORDER_SRV_Entities">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue EnumMember="None" Property="Rollup"></PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.API_SALES_ORDER_SRV_Entities/A_SalesOrderItemText">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue PropertyPath="LongText" Property="Property"></PropertyValue>
+                                    <PropertyValue String="SearchExpression" Property="AllowedExpressions"></PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>LongText</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>LongText</PropertyPath>
+                                <PropertyPath>LongText</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_SALES_ORDER_SRV.API_SALES_ORDER_SRV_Entities/A_SalesOrderText">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue PropertyPath="LongText" Property="Property"></PropertyValue>
+                                    <PropertyValue String="SearchExpression" Property="AllowedExpressions"></PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>LongText</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>LongText</PropertyPath>
+                                <PropertyPath>LongText</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata"></atom:link>
+            <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata"></atom:link>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,12 @@
+#Fri Jun 28 12:26:42 IST 2019
+Description=SCPDEV
+Type=HTTP
+Authentication=BasicAuthentication
+Name=SCP_DEV
+WebIDEUsage=odata_gen
+WebIDEEnabled=true
+Password=nBhLsiwWXmfwqmX)FDLRUA6SwdCitAXUswwZwLqX
+ProxyType=Internet
+URL=https\://my302314.s4hana.ondemand.com
+User=BHF_COMM
+WebIDESystem=S4HANA

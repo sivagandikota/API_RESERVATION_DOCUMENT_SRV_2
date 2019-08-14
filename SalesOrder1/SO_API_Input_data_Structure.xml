@@ -1,0 +1,418 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sd="http://sap.com/xi/SD-SLS">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sd:SalesOrderBulkRequest>
+         <MessageHeader>
+            <!--Optional:-->
+            <ID schemeID="" schemeAgencyID="" schemeAgencySchemeAgencyID=""></ID>
+            <!--Optional:-->
+            <UUID schemeID="" schemeAgencyID=""></UUID>
+            <!--Optional:-->
+            <ReferenceID schemeID="" schemeAgencyID="" schemeAgencySchemeAgencyID=""></ReferenceID>
+            <!--Optional:-->
+            <ReferenceUUID schemeID="" schemeAgencyID=""></ReferenceUUID>
+            <CreationDateTime></CreationDateTime>
+            <!--Optional:-->
+            <ReconciliationIndicator></ReconciliationIndicator>
+            <!--Optional:-->
+            <SenderBusinessSystemID></SenderBusinessSystemID>
+            <!--Optional:-->
+            <RecipientBusinessSystemID></RecipientBusinessSystemID>
+            <!--Optional:-->
+            <SenderParty>
+               <!--Optional:-->
+               <InternalID schemeID="" schemeAgencyID=""></InternalID>
+               <!--Zero or more repetitions:-->
+               <StandardID schemeAgencyID=""></StandardID>
+               <!--Optional:-->
+               <ContactPerson>
+                  <!--Optional:-->
+                  <InternalID schemeID="" schemeAgencyID=""></InternalID>
+                  <!--0 to 4 repetitions:-->
+                  <OrganisationFormattedName></OrganisationFormattedName>
+                  <!--0 to 4 repetitions:-->
+                  <PersonFormattedName></PersonFormattedName>
+                  <!--Zero or more repetitions:-->
+                  <PhoneNumber>
+                     <!--Optional:-->
+                     <AreaID></AreaID>
+                     <!--Optional:-->
+                     <SubscriberID></SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID></ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode></CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode></CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="EN"></CountryName>
+                  </PhoneNumber>
+                  <!--Zero or more repetitions:-->
+                  <FaxNumber>
+                     <!--Optional:-->
+                     <AreaID></AreaID>
+                     <!--Optional:-->
+                     <SubscriberID></SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID></ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode></CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode></CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="EN"></CountryName>
+                  </FaxNumber>
+                  <!--Zero or more repetitions:-->
+                  <EmailURI schemeID=""></EmailURI>
+               </ContactPerson>
+            </SenderParty>
+            <!--Zero or more repetitions:-->
+            <RecipientParty>
+               <!--Optional:-->
+               <InternalID schemeID="" schemeAgencyID=""></InternalID>
+               <!--Zero or more repetitions:-->
+               <StandardID schemeAgencyID=""></StandardID>
+               <!--Optional:-->
+               <ContactPerson>
+                  <!--Optional:-->
+                  <InternalID schemeID="" schemeAgencyID=""></InternalID>
+                  <!--0 to 4 repetitions:-->
+                  <OrganisationFormattedName></OrganisationFormattedName>
+                  <!--0 to 4 repetitions:-->
+                  <PersonFormattedName></PersonFormattedName>
+                  <!--Zero or more repetitions:-->
+                  <PhoneNumber>
+                     <!--Optional:-->
+                     <AreaID></AreaID>
+                     <!--Optional:-->
+                     <SubscriberID></SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID></ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode></CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode></CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="EN"></CountryName>
+                  </PhoneNumber>
+                  <!--Zero or more repetitions:-->
+                  <FaxNumber>
+                     <!--Optional:-->
+                     <AreaID></AreaID>
+                     <!--Optional:-->
+                     <SubscriberID></SubscriberID>
+                     <!--Optional:-->
+                     <ExtensionID></ExtensionID>
+                     <!--Optional:-->
+                     <CountryCode></CountryCode>
+                     <!--Optional:-->
+                     <CountryDiallingCode></CountryDiallingCode>
+                     <!--Optional:-->
+                     <CountryName languageCode="EN"></CountryName>
+                  </FaxNumber>
+                  <!--Zero or more repetitions:-->
+                  <EmailURI schemeID=""></EmailURI>
+               </ContactPerson>
+            </RecipientParty>
+            <!--Zero or more repetitions:-->
+            <BusinessScope>
+               <TypeCode listID="" listVersionID="" listAgencyID="" listAgencySchemeID="" listAgencySchemeAgencyID=""></TypeCode>
+               <!--Optional:-->
+               <InstanceID schemeID="" schemeAgencyID=""></InstanceID>
+               <!--Optional:-->
+               <ID schemeID="" schemeAgencyID=""></ID>
+            </BusinessScope>
+         </MessageHeader>
+         <!--1 or more repetitions:-->
+         <SalesOrder itemListCompleteTransmissionIndicator="" pricingElementListCompleteTransmissionIndicator="" partnerListCompleteTransmissionIndicator="" paymentPlanItemListCompleteTransmissionIndicator="" actionCode="">
+            <!--Optional:-->
+            <SalesOrderID></SalesOrderID>
+            <!--Optional:-->
+            <ExternalDocumentID></ExternalDocumentID>
+            <!--Optional:-->
+            <ExternalDocLastChangeDateTime></ExternalDocLastChangeDateTime>
+            <!--Optional:-->
+            <SalesOrderType></SalesOrderType>
+            <!--Optional:-->
+            <SalesOrganization></SalesOrganization>
+            <!--Optional:-->
+            <DistributionChannel></DistributionChannel>
+            <!--Optional:-->
+            <OrganizationDivision></OrganizationDivision>
+            <!--Optional:-->
+            <SalesGroup></SalesGroup>
+            <!--Optional:-->
+            <SalesOffice></SalesOffice>
+            <!--Optional:-->
+            <SalesDistrict></SalesDistrict>
+            <!--Optional:-->
+            <PurchaseOrderByCustomer></PurchaseOrderByCustomer>
+            <!--Optional:-->
+            <CustomerPurchaseOrderType></CustomerPurchaseOrderType>
+            <!--Optional:-->
+            <CustomerPurchaseOrderDate></CustomerPurchaseOrderDate>
+            <!--Optional:-->
+            <SalesOrderDate></SalesOrderDate>
+            <!--Optional:-->
+            <SDDocumentReason></SDDocumentReason>
+            <!--Optional:-->
+            <TransactionCurrency></TransactionCurrency>
+            <!--Optional:-->
+            <PriceDetnExchangeRate></PriceDetnExchangeRate>
+            <!--Optional:-->
+            <PricingDate></PricingDate>
+            <!--Optional:-->
+            <HeaderBillingBlockReason></HeaderBillingBlockReason>
+            <!--Optional:-->
+            <CustomerPaymentTerms></CustomerPaymentTerms>
+            <!--Optional:-->
+            <PaymentMethod></PaymentMethod>
+            <!--Optional:-->
+            <AssignmentReference></AssignmentReference>
+            <!--Optional:-->
+            <RequestedDeliveryDate></RequestedDeliveryDate>
+            <!--Optional:-->
+            <ShippingCondition></ShippingCondition>
+            <!--Optional:-->
+            <ShippingType></ShippingType>
+            <!--Optional:-->
+            <DeliveryBlockReason></DeliveryBlockReason>
+            <!--Optional:-->
+            <CompleteDeliveryIsDefined></CompleteDeliveryIsDefined>
+            <!--Optional:-->
+            <Incoterms>
+               <!--Optional:-->
+               <IncotermsVersion></IncotermsVersion>
+               <!--Optional:-->
+               <IncotermsClassification></IncotermsClassification>
+               <!--Optional:-->
+               <IncotermsLocation1></IncotermsLocation1>
+               <!--Optional:-->
+               <IncotermsLocation2></IncotermsLocation2>
+            </Incoterms>
+            <!--Zero or more repetitions:-->
+            <PricingElement actionCode="">
+               <!--Optional:-->
+               <ConditionType></ConditionType>
+               <!--Optional:-->
+               <ConditionRateValue valueUnit=""></ConditionRateValue>
+               <!--Optional:-->
+               <ConditionQuantity unitCode=""></ConditionQuantity>
+            </PricingElement>
+            <!--Zero or more repetitions:-->
+            <Partner actionCode="">
+               <!--Optional:-->
+               <PartnerFunction></PartnerFunction>
+               <!--Optional:-->
+               <BusinessPartnerID></BusinessPartnerID>
+               <!--Optional:-->
+               <Customer></Customer>
+               <!--Optional:-->
+               <Supplier></Supplier>
+               <!--Optional:-->
+               <Personnel></Personnel>
+               <!--Optional:-->
+               <ContactPerson></ContactPerson>
+               <!--Optional:-->
+               <Address>
+                  <!--Optional:-->
+                  <FormOfAddress></FormOfAddress>
+                  <!--Optional:-->
+                  <AddressName></AddressName>
+                  <!--Optional:-->
+                  <AddressAdditionalName></AddressAdditionalName>
+                  <!--Optional:-->
+                  <TaxJurisdiction></TaxJurisdiction>
+                  <!--Optional:-->
+                  <PhysicalAddress>
+                     <!--Optional:-->
+                     <Country></Country>
+                     <!--Optional:-->
+                     <Region></Region>
+                     <!--Optional:-->
+                     <PostalCode></PostalCode>
+                     <!--Optional:-->
+                     <POBoxPostalCode></POBoxPostalCode>
+                     <!--Optional:-->
+                     <CityName></CityName>
+                     <!--Optional:-->
+                     <District></District>
+                     <!--Optional:-->
+                     <POBox></POBox>
+                     <!--Optional:-->
+                     <StreetName></StreetName>
+                     <!--Optional:-->
+                     <HouseNumber></HouseNumber>
+                     <!--Optional:-->
+                     <TransportZone></TransportZone>
+                  </PhysicalAddress>
+                  <!--Optional:-->
+                  <Communication>
+                     <!--Optional:-->
+                     <CorrespondenceLanguage></CorrespondenceLanguage>
+                     <!--Optional:-->
+                     <Phone>
+                        <!--Optional:-->
+                        <PhoneNumber></PhoneNumber>
+                     </Phone>
+                     <!--Optional:-->
+                     <MobilePhone>
+                        <!--Optional:-->
+                        <MobilePhoneNumber></MobilePhoneNumber>
+                     </MobilePhone>
+                     <!--Optional:-->
+                     <Fax>
+                        <!--Optional:-->
+                        <FaxNumber></FaxNumber>
+                     </Fax>
+                     <!--Optional:-->
+                     <EmailAddress></EmailAddress>
+                  </Communication>
+               </Address>
+            </Partner>
+            <!--Zero or more repetitions:-->
+            <PaymentPlanItem authorizationListCompleteTransmissionIndicator="" actionCode="">
+               <!--Optional:-->
+               <EPaytByDigitalPaymentSrvc></EPaytByDigitalPaymentSrvc>
+               <!--Optional:-->
+               <MaximumToBeAuthorizedAmount currencyCode=""></MaximumToBeAuthorizedAmount>
+               <!--Zero or more repetitions:-->
+               <PaymentPlanItemAuthorization actionCode="">
+                  <!--Optional:-->
+                  <AuthorizationByDigitalPaytSrvc></AuthorizationByDigitalPaytSrvc>
+               </PaymentPlanItemAuthorization>
+            </PaymentPlanItem>
+            <!--Zero or more repetitions:-->
+            <Item pricingElementListCompleteTransmissionIndicator="" partnerListCompleteTransmissionIndicator="" actionCode="">
+               <!--Optional:-->
+               <SalesOrderItemID></SalesOrderItemID>
+               <!--Optional:-->
+               <ExternalItemID></ExternalItemID>
+               <!--Optional:-->
+               <HigherLevelItem></HigherLevelItem>
+               <!--Optional:-->
+               <SalesOrderItemCategory></SalesOrderItemCategory>
+               <!--Optional:-->
+               <SalesOrderItemText></SalesOrderItemText>
+               <!--Optional:-->
+               <PurchaseOrderByCustomer></PurchaseOrderByCustomer>
+               <!--Optional:-->
+               <PricingDate></PricingDate>
+               <!--Optional:-->
+               <CustomerPaymentTerms></CustomerPaymentTerms>
+               <!--Optional:-->
+               <SalesDocumentRjcnReason></SalesDocumentRjcnReason>
+               <!--Optional:-->
+               <ItemBillingBlockReason></ItemBillingBlockReason>
+               <!--Optional:-->
+               <RequestedQuantity unitCode=""></RequestedQuantity>
+               <!--Optional:-->
+               <Material></Material>
+               <!--Optional:-->
+               <MaterialGroup></MaterialGroup>
+               <!--Optional:-->
+               <Plant></Plant>
+               <!--Optional:-->
+               <StorageLocation></StorageLocation>
+               <!--Optional:-->
+               <DeliveryGroup></DeliveryGroup>
+               <!--Optional:-->
+               <ShippingPoint></ShippingPoint>
+               <!--Optional:-->
+               <ShippingType></ShippingType>
+               <!--Optional:-->
+               <DeliveryPriority></DeliveryPriority>
+               <!--Optional:-->
+               <ItemIncoterms>
+                  <!--Optional:-->
+                  <IncotermsClassification></IncotermsClassification>
+                  <!--Optional:-->
+                  <IncotermsLocation1></IncotermsLocation1>
+                  <!--Optional:-->
+                  <IncotermsLocation2></IncotermsLocation2>
+               </ItemIncoterms>
+               <!--Zero or more repetitions:-->
+               <PricingElement actionCode="">
+                  <!--Optional:-->
+                  <ConditionType></ConditionType>
+                  <!--Optional:-->
+                  <ConditionRateValue valueUnit=""></ConditionRateValue>
+                  <!--Optional:-->
+                  <ConditionQuantity unitCode=""></ConditionQuantity>
+               </PricingElement>
+               <!--Zero or more repetitions:-->
+               <Partner actionCode="">
+                  <!--Optional:-->
+                  <PartnerFunction></PartnerFunction>
+                  <!--Optional:-->
+                  <BusinessPartnerID></BusinessPartnerID>
+                  <!--Optional:-->
+                  <Customer></Customer>
+                  <!--Optional:-->
+                  <Supplier></Supplier>
+                  <!--Optional:-->
+                  <Personnel></Personnel>
+                  <!--Optional:-->
+                  <ContactPerson></ContactPerson>
+                  <!--Optional:-->
+                  <Address>
+                     <!--Optional:-->
+                     <FormOfAddress></FormOfAddress>
+                     <!--Optional:-->
+                     <AddressName></AddressName>
+                     <!--Optional:-->
+                     <AddressAdditionalName></AddressAdditionalName>
+                     <!--Optional:-->
+                     <TaxJurisdiction></TaxJurisdiction>
+                     <!--Optional:-->
+                     <PhysicalAddress>
+                        <!--Optional:-->
+                        <Country></Country>
+                        <!--Optional:-->
+                        <Region></Region>
+                        <!--Optional:-->
+                        <PostalCode></PostalCode>
+                        <!--Optional:-->
+                        <POBoxPostalCode></POBoxPostalCode>
+                        <!--Optional:-->
+                        <CityName></CityName>
+                        <!--Optional:-->
+                        <District></District>
+                        <!--Optional:-->
+                        <POBox></POBox>
+                        <!--Optional:-->
+                        <StreetName></StreetName>
+                        <!--Optional:-->
+                        <HouseNumber></HouseNumber>
+                        <!--Optional:-->
+                        <TransportZone></TransportZone>
+                     </PhysicalAddress>
+                     <!--Optional:-->
+                     <Communication>
+                        <!--Optional:-->
+                        <CorrespondenceLanguage></CorrespondenceLanguage>
+                        <!--Optional:-->
+                        <Phone>
+                           <!--Optional:-->
+                           <PhoneNumber></PhoneNumber>
+                        </Phone>
+                        <!--Optional:-->
+                        <MobilePhone>
+                           <!--Optional:-->
+                           <MobilePhoneNumber></MobilePhoneNumber>
+                        </MobilePhone>
+                        <!--Optional:-->
+                        <Fax>
+                           <!--Optional:-->
+                           <FaxNumber></FaxNumber>
+                        </Fax>
+                        <!--Optional:-->
+                        <EmailAddress></EmailAddress>
+                     </Communication>
+                  </Address>
+               </Partner>
+            </Item>
+         </SalesOrder>
+      </sd:SalesOrderBulkRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

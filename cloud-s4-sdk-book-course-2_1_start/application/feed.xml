@@ -1,0 +1,300 @@
+<feed xmlns="http://www.w3.org/2005/Atom"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+	xml:base="https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_CGROUP_CDS/">
+	<id>https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_CGROUP_CDS/YY1_CGroup
+	</id>
+	<title type="text">YY1_CGroup</title>
+	<updated>2019-01-11T10:53:34Z</updated>
+	<author>
+		<name />
+	</author>
+	<link href="YY1_CGroup" rel="self" title="YY1_CGroup" />
+	<entry>
+		<id>https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_CGROUP_CDS/YY1_CGroup('0006')
+		</id>
+		<title type="text">YY1_CGroup('0006')</title>
+		<updated>2019-01-11T10:53:34Z</updated>
+		<category term="YY1_CGROUP_CDS.YY1_CGroupType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link href="YY1_CGroup('0006')" rel="self" title="YY1_CGroupType" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:CustomGroup>0006</d:CustomGroup>
+				<d:CustomGroupDescription>0006</d:CustomGroupDescription>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_CGROUP_CDS/YY1_CGroup('0001')
+		</id>
+		<title type="text">YY1_CGroup('0001')</title>
+		<updated>2019-01-11T10:53:34Z</updated>
+		<category term="YY1_CGROUP_CDS.YY1_CGroupType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link href="YY1_CGroup('0001')" rel="self" title="YY1_CGroupType" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:CustomGroup>0001</d:CustomGroup>
+				<d:CustomGroupDescription>0001</d:CustomGroupDescription>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my301713-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_CGROUP_CDS/YY1_CGroup('0004')
+		</id>
+		<title type="text">YY1_CGroup('0004')</title>
+		<updated>2
+			019-01-11T10:53:34Z
+		</updated>
+		<category term="YY1_CGROUP_CDS.YY1_CGroupType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link href="YY1_CGroup('0004')" rel="self" title="YY1_CGroupType" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:CustomGroup>0004</d:CustomGroup>
+				<d:CustomGroupDescription></d:CustomGroupDescription>
+			</m:properties>
+		</content>
+	</entry>
+</feed>
+
+
+
+<feed xmlns="http://www.w3.org/2005/Atom"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+	xml:base="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/">
+	<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY
+	</id>
+	<title type="text">YY1_PRODUCT_HIERARCHY</title>
+	<updated>2019-01-29T07:00:44Z</updated>
+	<author>
+		<name />
+	</author>
+	<link href="YY1_PRODUCT_HIERARCHY" rel="self"
+		title="YY1_PRODUCT_HIERARCHY" />
+	<entry>
+		<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87bf-6f9c8e27553c')
+		</id>
+		<title type="text">YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87bf-6f9c8e27553c')
+		</title>
+		<updated>2019-01-29T07:00:44Z</updated>
+		<category
+			term="YY1_PRODUCT_HIERARCHY_CDS.YY1_PRODUCT_HIERARCHYType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link h
+			ref="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87bf-6f9c8e27553c')"
+			rel="edit" title="YY1_PRODUCT_HIERARCHYType" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87bf-6f9c8e27553c')/to_SAPSysAdminDataChangeUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataChangeUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataChangeUser" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87bf-6f9c8e27553c')/to_SAPSysAdminDataCreateUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataCreateUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataCreateUser" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:SAP_UUID>fa163e70-772b-1ed9-87bf-6f9c8e27553c</d:SAP_UUID>
+				<d:ProductHierarchy>101010101010101010</d:ProductHierarchy>
+				<d:SAP_Description>
+					Sample
+				</d:SAP_Descr
+iption>
+					<d:SAP_CreatedDateTime>2019-01-22T04:09:21.8705570Z
+					</d:SAP_CreatedDateTime>
+					<d:SAP_CreatedByUser>CB9980000004</d:SAP_CreatedByUser>
+					<d:SAP_CreatedByUser_Text>Sharad Agarwal</d:SAP_CreatedByUser_Text>
+					<d:SAP_LastChangedDateTime>2019-01-22T04:09:21.8705570Z
+					</d:SAP_LastChangedDateTime>
+					<d:SAP_LastChangedByUser>CB9980000004</d:SAP_LastChangedByUser>
+					<d:SAP_LastChangedByUser_Text>Sharad Agarwal
+					</d:SAP_LastChangedByUser_Text>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8104b66bac8f')
+		</id>
+		<title type="text">YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8104b66bac8f')
+		</title>
+		<updated>2019-01-29T07:00:44Z</updated>
+		<category
+			term="YY1_PRODUCT_HIERARCHY_CDS.YY1_PRODUCT_HIERARCHYType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8104b66bac8f')"
+			rel="edit" title="YY1_PRODUCT_HIERARCHYType" />
+		<li nk
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8104b66bac8f')/to_SAPSysAdminDataChangeUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataChangeUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataChangeUser" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8104b66bac8f')/to_SAPSysAdminDataCreateUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataCreateUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataCreateUser" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:SAP_UUID>fa163e70-772b-1ed9-87d5-8104b66bac8f</d:SAP_UUID>
+				<d:ProductHierarchy>0</d:ProductHierarchy>
+				<d:SAP_Description>Price Code 0</d:SAP_Description>
+				<d:SAP_CreatedDateTime>2019-01-23T01:13:04.0562220Z
+				</d:SAP_CreatedDateTime>
+				<d:SAP_CreatedByUser>
+					CB9980000004
+				</d:SAP_CreatedBy
+User>
+					<d:SAP_CreatedByUser_Text>Sharad Agarwal</d:SAP_CreatedByUser_Text>
+					<d:SAP_LastChangedDateTime>2019-01-23T01:13:04.0562220Z
+					</d:SAP_LastChangedDateTime>
+					<d:SAP_LastChangedByUser>CB9980000004</d:SAP_LastChangedByUser>
+					<d:SAP_LastChangedByUser_Text>Sharad Agarwal
+					</d:SAP_LastChangedByUser_Text>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-826694feec99')
+		</id>
+		<title type="text">YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-826694feec99')
+		</title>
+		<updated>2019-01-29T07:00:44Z</updated>
+		<category
+			term="YY1_PRODUCT_HIERARCHY_CDS.YY1_PRODUCT_HIERARCHYType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-826694feec99')"
+			rel="edit" title="YY1_PRODUCT_HIERARCHYType" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-826694feec99')/to_SAPSysAdminDataChangeUser"
+			rel="http://schemas.microso
+ft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataChangeUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataChangeUser" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-826694feec99')/to_SAPSysAdminDataCreateUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataCreateUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataCreateUser" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:SAP_UUID>fa163e70-772b-1ed9-87d5-826694feec99</d:SAP_UUID>
+				<d:ProductHierarchy>01</d:ProductHierarchy>
+				<d:SAP_Description>Price code 01</d:SAP_Description>
+				<d:SAP_CreatedDateTime>2019-01-23T01:13:21.7520130Z
+				</d:SAP_CreatedDateTime>
+				<d:SAP_CreatedByUser>CB9980000004</d:SAP_CreatedByUser>
+				<d:SAP_CreatedByUser_Text>Sharad Agarwal</d:SAP_CreatedByUser_Text>
+				<d:SAP_LastChangedDateTime>
+					2019-01-23T01:13:21.7520130Z
+				</d
+:SAP_LastChangedDateTime>
+					<d:SAP_LastChangedByUser>CB9980000004</d:SAP_LastChangedByUser>
+					<d:SAP_LastChangedByUser_Text>Sharad Agarwal
+					</d:SAP_LastChangedByUser_Text>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8410d1056c9b')
+		</id>
+		<title type="text">YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8410d1056c9b')
+		</title>
+		<updated>2019-01-29T07:00:44Z</updated>
+		<category
+			term="YY1_PRODUCT_HIERARCHY_CDS.YY1_PRODUCT_HIERARCHYType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8410d1056c9b')"
+			rel="edit" title="YY1_PRODUCT_HIERARCHYType" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8410d1056c9b')/to_SAPSysAdminDataChangeUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataChangeUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdmin
+DataChangeUser" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-8410d1056c9b')/to_SAPSysAdminDataCreateUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataCreateUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataCreateUser" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:SAP_UUID>fa163e70-772b-1ed9-87d5-8410d1056c9b</d:SAP_UUID>
+				<d:ProductHierarchy>1</d:ProductHierarchy>
+				<d:SAP_Description>Price Code 1</d:SAP_Description>
+				<d:SAP_CreatedDateTime>2019-01-23T01:13:44.1055020Z
+				</d:SAP_CreatedDateTime>
+				<d:SAP_CreatedByUser>CB9980000004</d:SAP_CreatedByUser>
+				<d:SAP_CreatedByUser_Text>Sharad Agarwal</d:SAP_CreatedByUser_Text>
+				<d:SAP_LastChangedDateTime>2019-01-23T01:13:44.1055020Z
+				</d:SAP_LastChangedDateTime>
+				<d:SAP_LastChangedByUser>CB9980000004</d:SAP_LastChangedByUser>
+				<d:SAP_LastChangedByUser_Text>Sharad Agarwal
+				</d:SAP_LastChangedByUser_Text>
+			</m:properties>
+		</content>
+	</entry>
+	<entry>
+		<id>https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_PRODUCT_HIERARCHY_CDS/YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-84e9f70a6c9c')
+		</id>
+		<title type="text">YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-84e9f70a6c9c')
+		</title>
+		<updated>2019-01-29T07:00:44Z</updated>
+		<category
+			term="YY1_PRODUCT_HIERARCHY_CDS.YY1_PRODUCT_HIERARCHYType"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-84e9f70a6c9c')"
+			rel="edit" title="YY1_PRODUCT_HIERARCHYType" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-84e9f70a6c9c')/to_SAPSysAdminDataChangeUser"
+			rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataChangeUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataChangeUser" />
+		<link
+			href="YY1_PRODUCT_HIERARCHY(guid'fa163e70-772b-1ed9-87d5-84e9f70a6c9c')/to_SAPSysAdminDataCreateUser"
+			rel="ht
+tp://schemas.microsoft.com/ado/2007/08/dataservices/related/to_SAPSysAdminDataCreateUser"
+			type="application/atom+xml;type=entry"
+			title="to_SAPSysAdminDataCreateUser" />
+		<content type="application/xml">
+			<m:properties
+				xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+				xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+				<d:SAP_UUID>fa163e70-772b-1ed9-87d5-84e9f70a6c9c</d:SAP_UUID>
+				<d:ProductHierarchy>10</d:ProductHierarchy>
+				<d:SAP_Description>Price Code 10</d:SAP_Description>
+				<d:SAP_CreatedDateTime>2019-01-23T01:13:55.4808880Z
+				</d:SAP_CreatedDateTime>
+				<d:SAP_CreatedByUser>CB9980000004</d:SAP_CreatedByUser>
+				<d:SAP_CreatedByUser_Text>Sharad Agarwal</d:SAP_CreatedByUser_Text>
+				<d:SAP_LastChangedDateTime>2019-01-23T01:13:55.4808880Z
+				</d:SAP_LastChangedDateTime>
+				<d:SAP_LastChangedByUser>CB9980000004</d:SAP_LastChangedByUser>
+				<d:SAP_LastChangedByUser_Text>Sharad Agarwal
+				</d:SAP_LastChangedByUser_Text>
+			</m:properties>
+		</content>
+	</entry>
+</feed>
+

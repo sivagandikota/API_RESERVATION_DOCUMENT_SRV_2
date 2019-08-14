@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="YY1_ZBOOKS_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="P_Scbo_UserType" sap:label="wrapper view for usr21" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="name"/>
+                </Key>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User" sap:quickinfo="User Name in User Master Record"/>
+                <Property Name="description" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account"/>
+            </EntityType>
+            <EntityType Name="YY1_VH_ZBOOKTYPESType" sap:label="ZBOOKTYPES" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="sap_uuid"/>
+                </Key>
+                <Property Name="sap_uuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="BOOKTYPE" Type="Edm.String" MaxLength="3" sap:text="SAP_Description" sap:label="BOOKTYPE"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="YY1_VH_ZBRANDSType" sap:label="ZBRANDS" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="sap_uuid"/>
+                </Key>
+                <Property Name="sap_uuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="Brand" Type="Edm.String" MaxLength="20" sap:text="SAP_Description" sap:label="Brand"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="YY1_VH_ZTHEMESType" sap:label="ZTHEMES" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="sap_uuid"/>
+                </Key>
+                <Property Name="sap_uuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="Thems" Type="Edm.String" MaxLength="20" sap:text="SAP_Description" sap:label="Thems"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="YY1_ZBOOKSType" sap:label="ZBOOKS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:label="Company Code"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:label="Material Group"/>
+                <Property Name="Brandcode" Type="Edm.String" MaxLength="20" sap:text="Brandcode_Text" sap:label="Brand code" sap:value-list="standard"/>
+                <Property Name="Brandcode_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Bookstartdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Book start date"/>
+                <Property Name="Bookenddate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Book end date"/>
+                <Property Name="Bookreleasedate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Book release date"/>
+                <Property Name="BookType" Type="Edm.String" MaxLength="3" sap:text="BookType_Text" sap:label="Book Type" sap:value-list="standard"/>
+                <Property Name="BookType_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ThemeCode" Type="Edm.String" MaxLength="20" sap:text="ThemeCode_Text" sap:label="Theme Code" sap:value-list="standard"/>
+                <Property Name="ThemeCode_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BookNumberrelatedTo" Type="Edm.String" MaxLength="9" sap:label="Book Number related To"/>
+                <Property Name="MaterialPricingGroup" Type="Edm.String" MaxLength="2" sap:label="Material Pricing Group"/>
+                <Property Name="DiscontinuationIndicator" Type="Edm.String" MaxLength="1" sap:label="Discontinuation Indicator"/>
+                <Property Name="IncludeExcludeinBookList" Type="Edm.String" MaxLength="1" sap:label="Include/Exclude in Book List"/>
+                <Property Name="BookDiscontinuationMonth" Type="Edm.String" MaxLength="6" sap:label="Book Discontinuation Month"/>
+                <Property Name="PricingGradeforSamples" Type="Edm.String" MaxLength="1" sap:label="Pricing Grade for Samples"/>
+                <Property Name="Nocutchargeapplicable" Type="Edm.String" MaxLength="1" sap:label="No cut charge applicable"/>
+                <Property Name="Longtextdescribingthemateria" Type="Edm.String" MaxLength="60" sap:label="Long text describing the material group"/>
+                <Property Name="Chinabooknumber" Type="Edm.String" MaxLength="9" sap:label="China book number"/>
+                <Property Name="UKbooknumber" Type="Edm.String" MaxLength="9" sap:label="UK book number"/>
+                <Property Name="NetPricedbook" Type="Edm.String" MaxLength="1" sap:label="Net Priced book"/>
+                <Property Name="SAP_CreatedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_CreatedByUser_Text" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_CreatedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_LastChangedByUser_Text" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="to_BookType" Relationship="YY1_ZBOOKS_CDS.assoc_2E4300CA2F792994A386CC9A41AC8B70" FromRole="FromRole_assoc_2E4300CA2F792994A386CC9A41AC8B70" ToRole="ToRole_assoc_2E4300CA2F792994A386CC9A41AC8B70"/>
+                <NavigationProperty Name="to_Brandcode" Relationship="YY1_ZBOOKS_CDS.assoc_3489F5C036193ADBE339DA96C3387724" FromRole="FromRole_assoc_3489F5C036193ADBE339DA96C3387724" ToRole="ToRole_assoc_3489F5C036193ADBE339DA96C3387724"/>
+                <NavigationProperty Name="to_SAPSysAdminDataChangeUser" Relationship="YY1_ZBOOKS_CDS.assoc_65912D602BBB6CA455B670E3A29DB7D3" FromRole="FromRole_assoc_65912D602BBB6CA455B670E3A29DB7D3" ToRole="ToRole_assoc_65912D602BBB6CA455B670E3A29DB7D3"/>
+                <NavigationProperty Name="to_SAPSysAdminDataCreateUser" Relationship="YY1_ZBOOKS_CDS.assoc_D10E46DA5A98A9C74822882260106235" FromRole="FromRole_assoc_D10E46DA5A98A9C74822882260106235" ToRole="ToRole_assoc_D10E46DA5A98A9C74822882260106235"/>
+                <NavigationProperty Name="to_ThemeCode" Relationship="YY1_ZBOOKS_CDS.assoc_DD05F15B11F917BEBBC430AB6F918E13" FromRole="FromRole_assoc_DD05F15B11F917BEBBC430AB6F918E13" ToRole="ToRole_assoc_DD05F15B11F917BEBBC430AB6F918E13"/>
+            </EntityType>
+            <EntityType Name="YY1_ZBOOKTYPESType" sap:label="ZBOOKTYPES" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="BOOKTYPE" Type="Edm.String" MaxLength="3" sap:label="BOOKTYPE"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="YY1_ZBRANDSType" sap:label="ZBRANDS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="Brand" Type="Edm.String" MaxLength="20" sap:label="Brand"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <EntityType Name="YY1_ZTHEMESType" sap:label="ZTHEMES" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="Thems" Type="Edm.String" MaxLength="20" sap:label="Thems"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+            </EntityType>
+            <Association Name="assoc_3489F5C036193ADBE339DA96C3387724" sap:content-version="1">
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" Multiplicity="1" Role="FromRole_assoc_3489F5C036193ADBE339DA96C3387724"/>
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBRANDSType" Multiplicity="0..1" Role="ToRole_assoc_3489F5C036193ADBE339DA96C3387724"/>
+            </Association>
+            <Association Name="assoc_65912D602BBB6CA455B670E3A29DB7D3" sap:content-version="1">
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" Multiplicity="1" Role="FromRole_assoc_65912D602BBB6CA455B670E3A29DB7D3"/>
+                <End Type="YY1_ZBOOKS_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_65912D602BBB6CA455B670E3A29DB7D3"/>
+            </Association>
+            <Association Name="assoc_D10E46DA5A98A9C74822882260106235" sap:content-version="1">
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" Multiplicity="1" Role="FromRole_assoc_D10E46DA5A98A9C74822882260106235"/>
+                <End Type="YY1_ZBOOKS_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_D10E46DA5A98A9C74822882260106235"/>
+            </Association>
+            <Association Name="assoc_DD05F15B11F917BEBBC430AB6F918E13" sap:content-version="1">
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" Multiplicity="1" Role="FromRole_assoc_DD05F15B11F917BEBBC430AB6F918E13"/>
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZTHEMESType" Multiplicity="0..1" Role="ToRole_assoc_DD05F15B11F917BEBBC430AB6F918E13"/>
+            </Association>
+            <Association Name="assoc_2E4300CA2F792994A386CC9A41AC8B70" sap:content-version="1">
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" Multiplicity="1" Role="FromRole_assoc_2E4300CA2F792994A386CC9A41AC8B70"/>
+                <End Type="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType" Multiplicity="0..1" Role="ToRole_assoc_2E4300CA2F792994A386CC9A41AC8B70"/>
+            </Association>
+            <EntityContainer Name="YY1_ZBOOKS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="P_Scbo_User" EntityType="YY1_ZBOOKS_CDS.P_Scbo_UserType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="YY1_VH_ZBOOKTYPES" EntityType="YY1_ZBOOKS_CDS.YY1_VH_ZBOOKTYPESType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_VH_ZBRANDS" EntityType="YY1_ZBOOKS_CDS.YY1_VH_ZBRANDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_VH_ZTHEMES" EntityType="YY1_ZBOOKS_CDS.YY1_VH_ZTHEMESType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_ZBOOKS" EntityType="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_ZBOOKTYPES" EntityType="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_ZBRANDS" EntityType="YY1_ZBOOKS_CDS.YY1_ZBRANDSType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="YY1_ZTHEMES" EntityType="YY1_ZBOOKS_CDS.YY1_ZTHEMESType" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_65912D602BBB6CA455B670E3A29DB7D3" Association="YY1_ZBOOKS_CDS.assoc_65912D602BBB6CA455B670E3A29DB7D3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_ZBOOKS" Role="FromRole_assoc_65912D602BBB6CA455B670E3A29DB7D3"/>
+                    <End EntitySet="P_Scbo_User" Role="ToRole_assoc_65912D602BBB6CA455B670E3A29DB7D3"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_D10E46DA5A98A9C74822882260106235" Association="YY1_ZBOOKS_CDS.assoc_D10E46DA5A98A9C74822882260106235" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_ZBOOKS" Role="FromRole_assoc_D10E46DA5A98A9C74822882260106235"/>
+                    <End EntitySet="P_Scbo_User" Role="ToRole_assoc_D10E46DA5A98A9C74822882260106235"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_3489F5C036193ADBE339DA96C3387724" Association="YY1_ZBOOKS_CDS.assoc_3489F5C036193ADBE339DA96C3387724" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_ZBOOKS" Role="FromRole_assoc_3489F5C036193ADBE339DA96C3387724"/>
+                    <End EntitySet="YY1_ZBRANDS" Role="ToRole_assoc_3489F5C036193ADBE339DA96C3387724"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_DD05F15B11F917BEBBC430AB6F918E13" Association="YY1_ZBOOKS_CDS.assoc_DD05F15B11F917BEBBC430AB6F918E13" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_ZBOOKS" Role="FromRole_assoc_DD05F15B11F917BEBBC430AB6F918E13"/>
+                    <End EntitySet="YY1_ZTHEMES" Role="ToRole_assoc_DD05F15B11F917BEBBC430AB6F918E13"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_2E4300CA2F792994A386CC9A41AC8B70" Association="YY1_ZBOOKS_CDS.assoc_2E4300CA2F792994A386CC9A41AC8B70" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="YY1_ZBOOKS" Role="FromRole_assoc_2E4300CA2F792994A386CC9A41AC8B70"/>
+                    <End EntitySet="YY1_ZBOOKTYPES" Role="ToRole_assoc_2E4300CA2F792994A386CC9A41AC8B70"/>
+                </AssociationSet>
+                <FunctionImport Name="YY1_ZBOOKSSap_upsert" ReturnType="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" EntitySet="YY1_ZBOOKS" m:HttpMethod="POST" sap:action-for="YY1_ZBOOKS_CDS.YY1_ZBOOKSType">
+                    <Parameter Name="CompanyCode" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="MaterialGroup" Type="Edm.String" Mode="In" MaxLength="9"/>
+                    <Parameter Name="Brandcode" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="Bookstartdate" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                    <Parameter Name="Bookenddate" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                    <Parameter Name="Bookreleasedate" Type="Edm.DateTime" Mode="In" Precision="0"/>
+                    <Parameter Name="BookType" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="ThemeCode" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="BookNumberrelatedTo" Type="Edm.String" Mode="In" MaxLength="9"/>
+                    <Parameter Name="MaterialPricingGroup" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="DiscontinuationIndicator" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="IncludeExcludeinBookList" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="BookDiscontinuationMonth" Type="Edm.String" Mode="In" MaxLength="6"/>
+                    <Parameter Name="PricingGradeforSamples" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="Nocutchargeapplicable" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="Longtextdescribingthemateria" Type="Edm.String" Mode="In" MaxLength="60"/>
+                    <Parameter Name="Chinabooknumber" Type="Edm.String" Mode="In" MaxLength="9"/>
+                    <Parameter Name="UKbooknumber" Type="Edm.String" Mode="In" MaxLength="9"/>
+                    <Parameter Name="NetPricedbook" Type="Edm.String" Mode="In" MaxLength="1"/>
+                </FunctionImport>
+                <FunctionImport Name="YY1_ZBOOKTYPESSap_upsert" ReturnType="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType" EntitySet="YY1_ZBOOKTYPES" m:HttpMethod="POST" sap:action-for="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType">
+                    <Parameter Name="BOOKTYPE" Type="Edm.String" Mode="In" MaxLength="3"/>
+                    <Parameter Name="SAP_Description" Type="Edm.String" Mode="In" MaxLength="80"/>
+                </FunctionImport>
+                <FunctionImport Name="YY1_ZBRANDSSap_upsert" ReturnType="YY1_ZBOOKS_CDS.YY1_ZBRANDSType" EntitySet="YY1_ZBRANDS" m:HttpMethod="POST" sap:action-for="YY1_ZBOOKS_CDS.YY1_ZBRANDSType">
+                    <Parameter Name="Brand" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="SAP_Description" Type="Edm.String" Mode="In" MaxLength="80"/>
+                </FunctionImport>
+                <FunctionImport Name="YY1_ZTHEMESSap_upsert" ReturnType="YY1_ZBOOKS_CDS.YY1_ZTHEMESType" EntitySet="YY1_ZTHEMES" m:HttpMethod="POST" sap:action-for="YY1_ZBOOKS_CDS.YY1_ZTHEMESType">
+                    <Parameter Name="Thems" Type="Edm.String" Mode="In" MaxLength="20"/>
+                    <Parameter Name="SAP_Description" Type="Edm.String" Mode="In" MaxLength="80"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType/Brandcode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="ZBRANDS"/>
+                        <PropertyValue Property="CollectionPath" String="YY1_VH_ZBRANDS"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Brandcode"/>
+                                    <PropertyValue Property="ValueListProperty" String="Brand"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="sap_uuid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SAP_Description"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType/BookType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="ZBOOKTYPES"/>
+                        <PropertyValue Property="CollectionPath" String="YY1_VH_ZBOOKTYPES"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BookType"/>
+                                    <PropertyValue Property="ValueListProperty" String="BOOKTYPE"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="sap_uuid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SAP_Description"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType/ThemeCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="ZTHEMES"/>
+                        <PropertyValue Property="CollectionPath" String="YY1_VH_ZTHEMES"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ThemeCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="Thems"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="sap_uuid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="SAP_Description"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKS_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType/CompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType/MaterialGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType/BOOKTYPE" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBRANDSType/Brand" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZTHEMESType/Thems" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKSType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>MaterialGroup</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBOOKTYPESType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>BOOKTYPE</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZBRANDSType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>Brand</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="YY1_ZBOOKS_CDS.YY1_ZTHEMESType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>Thems</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_ZBOOKS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://my302314-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_ZBOOKS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

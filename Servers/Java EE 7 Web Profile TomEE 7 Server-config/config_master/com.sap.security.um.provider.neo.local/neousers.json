@@ -1,0 +1,47 @@
+{
+  "Users": [
+    {
+      "UID": "gssubramanyam@gmail.com",
+      "Password": "{SSHA}f8SKV1dVcx9tn9ejOnOEZXLJRzW3u7PfOig\u003d",
+      "Roles": [
+        "Everyone"
+      ],
+      "Attributes": [
+        {
+          "attributeName": "firstname",
+          "attributeValue": "Siva Subramanyam"
+        },
+        {
+          "attributeName": "lastname",
+          "attributeValue": "Gandikota"
+        },
+        {
+          "attributeName": "email",
+          "attributeValue": "Siva.Gandikota@microcomsolution.com"
+        }
+      ]
+    },
+    {
+      "UID": "siva.gandikota@microcomsolution.com",
+      "Password": "{SSHA}YylVZa2v7Uk/c1mMeN59EH9E1OAlSgeyfas\u003d",
+      "Roles": [
+        "Everyone",
+        "Admin"
+      ],
+      "Attributes": [
+        {
+          "attributeName": "firstname",
+          "attributeValue": "Siva Subramanyam"
+        },
+        {
+          "attributeName": "lastname",
+          "attributeValue": "Gandikota"
+        },
+        {
+          "attributeName": "email",
+          "attributeValue": "Siva.Gandikota@microcomsolution.com"
+        }
+      ]
+    }
+  ]
+}

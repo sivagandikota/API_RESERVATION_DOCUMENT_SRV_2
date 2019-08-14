@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+<SCRIPT type="text/javascript">
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "https://api.backblazeb2.com/b2api/v2/b2_authorize_account", true, "870dae7d6ba2", "002ee2eb98c6389e3ad7a715039002eb3ecb97c100");
+//xhr.setRequestHeader("B2_ACCOUNT_ID","870dae7d6ba2");
+//xhr.setRequestHeader("B2_APPLICATION_KEY","002ee2eb98c6389e3ad7a715039002eb3ecb97c100");
+xhr.setRequestHeader("Access-Control-Allow-Origin","null");
+xhr.setRequestHeader("Authorization","Basic " + btoa("870dae7d6ba2:002ee2eb98c6389e3ad7a715039002eb3ecb97c100"));
+xhr.send("");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == xhr.DONE) {
+    	alert(xhr.status);
+        var response = xhr.responseText;
+        alert(response)
+        var obj = JSON.parse(response); 
+        key = obj.access_token; //store the value of the accesstoken
+        token_ = key; // store token in your global variable "token_" or you could simply return the value of the access token from the function
+    }
+}
+//alert(xhr.status);
+//alert( xhr.responseText);
+</SCRIPT>
+</body></html>

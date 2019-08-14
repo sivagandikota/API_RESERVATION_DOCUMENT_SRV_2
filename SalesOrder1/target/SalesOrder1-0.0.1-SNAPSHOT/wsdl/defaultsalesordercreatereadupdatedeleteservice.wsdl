@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DefaultSalesOrderCreateReadUpdateDeleteServiceService" targetNamespace="http://services.brewster.sap.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.brewster.sap.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://services.brewster.sap.com/" schemaLocation="defaultsalesordercreatereadupdatedeleteservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="updateSalesOrderHeaderPartnerResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderHeaderPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSlsOrdPaymentPlanItemDetailsResponse">
+    <wsdl:part name="parameters" element="tns:updateSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItem">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItem">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemPartner">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemTextResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemPartnerByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemPartnerByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSlsOrdPaymentPlanItemDetailsByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSlsOrdPaymentPlanItemDetailsByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemPartner">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemPrElementResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderText">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderScheduleLine">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderScheduleLine">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderHeaderPartnerResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderHeaderPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemPrElement">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemPartner">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemPrElement">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderHeaderPartner">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderHeaderPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderScheduleLineByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderScheduleLineByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemPrElementByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemPrElementByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderHeaderPrElement">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderHeaderPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderHeaderPrElement">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderHeaderPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSlsOrdPaymentPlanItemDetails">
+    <wsdl:part name="parameters" element="tns:updateSlsOrdPaymentPlanItemDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderHeaderPrElementByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderHeaderPrElementByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderTextResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrder">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemPrElementResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderHeaderPartner">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderHeaderPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderHeaderPrElementByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderHeaderPrElementByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemTextResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemPartnerResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemText">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSlsOrdPaymentPlanItemDetailsResponse">
+    <wsdl:part name="parameters" element="tns:deleteSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSalesOrderItemResponse">
+    <wsdl:part name="parameters" element="tns:createSalesOrderItemResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItem">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItem">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderTextResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderTextByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderTextByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSalesOrderItem">
+    <wsdl:part name="parameters" element="tns:createSalesOrderItem">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderTextResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderHeaderPrElementResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderHeaderPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderHeaderPrElementResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderHeaderPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemTextByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemTextByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSlsOrdPaymentPlanItemDetails">
+    <wsdl:part name="parameters" element="tns:deleteSlsOrdPaymentPlanItemDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderHeaderPartner">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderHeaderPartner">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSalesOrderResponse">
+    <wsdl:part name="parameters" element="tns:createSalesOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderHeaderPrElementResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderHeaderPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItem">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItem">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemTextResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemTextResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderText">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemPartnerByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemPartnerByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemPrElementByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemPrElementByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderScheduleLineByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderScheduleLineByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrder">
+    <wsdl:part name="parameters" element="tns:updateSalesOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemPrElementResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemPrElementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderText">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrder">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderTextByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderTextByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderHeaderPartnerByKeyResponse">
+    <wsdl:part name="parameters" element="tns:getSalesOrderHeaderPartnerByKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemPartnerResponse">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSlsOrdPaymentPlanItemDetailsByKey">
+    <wsdl:part name="parameters" element="tns:getSlsOrdPaymentPlanItemDetailsByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderHeaderPrElement">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderHeaderPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderHeaderPartnerByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderHeaderPartnerByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderScheduleLineResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderScheduleLineResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemPrElement">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemPrElement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSalesOrder">
+    <wsdl:part name="parameters" element="tns:createSalesOrder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSlsOrdPaymentPlanItemDetails">
+    <wsdl:part name="parameters" element="tns:getAllSlsOrdPaymentPlanItemDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderItemText">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderItemText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSalesOrderItemTextByKey">
+    <wsdl:part name="parameters" element="tns:getSalesOrderItemTextByKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteSalesOrderItemText">
+    <wsdl:part name="parameters" element="tns:deleteSalesOrderItemText">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSlsOrdPaymentPlanItemDetailsResponse">
+    <wsdl:part name="parameters" element="tns:getAllSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllSalesOrderHeaderPartnerResponse">
+    <wsdl:part name="parameters" element="tns:getAllSalesOrderHeaderPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateSalesOrderItemPartnerResponse">
+    <wsdl:part name="parameters" element="tns:updateSalesOrderItemPartnerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DefaultSalesOrderCreateReadUpdateDeleteService">
+    <wsdl:operation name="deleteSlsOrdPaymentPlanItemDetails">
+      <wsdl:input name="deleteSlsOrdPaymentPlanItemDetails" message="tns:deleteSlsOrdPaymentPlanItemDetails">
+    </wsdl:input>
+      <wsdl:output name="deleteSlsOrdPaymentPlanItemDetailsResponse" message="tns:deleteSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItem">
+      <wsdl:input name="deleteSalesOrderItem" message="tns:deleteSalesOrderItem">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemResponse" message="tns:deleteSalesOrderItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemPartner">
+      <wsdl:input name="getAllSalesOrderItemPartner" message="tns:getAllSalesOrderItemPartner">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemPartnerResponse" message="tns:getAllSalesOrderItemPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderHeaderPartner">
+      <wsdl:input name="updateSalesOrderHeaderPartner" message="tns:updateSalesOrderHeaderPartner">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderHeaderPartnerResponse" message="tns:updateSalesOrderHeaderPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemPartnerByKey">
+      <wsdl:input name="getSalesOrderItemPartnerByKey" message="tns:getSalesOrderItemPartnerByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderItemPartnerByKeyResponse" message="tns:getSalesOrderItemPartnerByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemByKey">
+      <wsdl:input name="getSalesOrderItemByKey" message="tns:getSalesOrderItemByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderItemByKeyResponse" message="tns:getSalesOrderItemByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemPartner">
+      <wsdl:input name="updateSalesOrderItemPartner" message="tns:updateSalesOrderItemPartner">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemPartnerResponse" message="tns:updateSalesOrderItemPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItem">
+      <wsdl:input name="getAllSalesOrderItem" message="tns:getAllSalesOrderItem">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemResponse" message="tns:getAllSalesOrderItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderText">
+      <wsdl:input name="getAllSalesOrderText" message="tns:getAllSalesOrderText">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderTextResponse" message="tns:getAllSalesOrderTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderText">
+      <wsdl:input name="deleteSalesOrderText" message="tns:deleteSalesOrderText">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderTextResponse" message="tns:deleteSalesOrderTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderScheduleLine">
+      <wsdl:input name="getAllSalesOrderScheduleLine" message="tns:getAllSalesOrderScheduleLine">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderScheduleLineResponse" message="tns:getAllSalesOrderScheduleLineResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemPrElementByKey">
+      <wsdl:input name="getSalesOrderItemPrElementByKey" message="tns:getSalesOrderItemPrElementByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderItemPrElementByKeyResponse" message="tns:getSalesOrderItemPrElementByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderScheduleLineByKey">
+      <wsdl:input name="getSalesOrderScheduleLineByKey" message="tns:getSalesOrderScheduleLineByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderScheduleLineByKeyResponse" message="tns:getSalesOrderScheduleLineByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrder">
+      <wsdl:input name="updateSalesOrder" message="tns:updateSalesOrder">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderResponse" message="tns:updateSalesOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemPrElement">
+      <wsdl:input name="updateSalesOrderItemPrElement" message="tns:updateSalesOrderItemPrElement">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemPrElementResponse" message="tns:updateSalesOrderItemPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderText">
+      <wsdl:input name="updateSalesOrderText" message="tns:updateSalesOrderText">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderTextResponse" message="tns:updateSalesOrderTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemPartner">
+      <wsdl:input name="deleteSalesOrderItemPartner" message="tns:deleteSalesOrderItemPartner">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemPartnerResponse" message="tns:deleteSalesOrderItemPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemPrElement">
+      <wsdl:input name="getAllSalesOrderItemPrElement" message="tns:getAllSalesOrderItemPrElement">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemPrElementResponse" message="tns:getAllSalesOrderItemPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrder">
+      <wsdl:input name="deleteSalesOrder" message="tns:deleteSalesOrder">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderResponse" message="tns:deleteSalesOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderHeaderPartner">
+      <wsdl:input name="deleteSalesOrderHeaderPartner" message="tns:deleteSalesOrderHeaderPartner">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderHeaderPartnerResponse" message="tns:deleteSalesOrderHeaderPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderTextByKey">
+      <wsdl:input name="getSalesOrderTextByKey" message="tns:getSalesOrderTextByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderTextByKeyResponse" message="tns:getSalesOrderTextByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderByKey">
+      <wsdl:input name="getSalesOrderByKey" message="tns:getSalesOrderByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderByKeyResponse" message="tns:getSalesOrderByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderHeaderPrElement">
+      <wsdl:input name="getAllSalesOrderHeaderPrElement" message="tns:getAllSalesOrderHeaderPrElement">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderHeaderPrElementResponse" message="tns:getAllSalesOrderHeaderPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderHeaderPrElement">
+      <wsdl:input name="deleteSalesOrderHeaderPrElement" message="tns:deleteSalesOrderHeaderPrElement">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderHeaderPrElementResponse" message="tns:deleteSalesOrderHeaderPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSlsOrdPaymentPlanItemDetailsByKey">
+      <wsdl:input name="getSlsOrdPaymentPlanItemDetailsByKey" message="tns:getSlsOrdPaymentPlanItemDetailsByKey">
+    </wsdl:input>
+      <wsdl:output name="getSlsOrdPaymentPlanItemDetailsByKeyResponse" message="tns:getSlsOrdPaymentPlanItemDetailsByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderHeaderPrElement">
+      <wsdl:input name="updateSalesOrderHeaderPrElement" message="tns:updateSalesOrderHeaderPrElement">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderHeaderPrElementResponse" message="tns:updateSalesOrderHeaderPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSlsOrdPaymentPlanItemDetails">
+      <wsdl:input name="updateSlsOrdPaymentPlanItemDetails" message="tns:updateSlsOrdPaymentPlanItemDetails">
+    </wsdl:input>
+      <wsdl:output name="updateSlsOrdPaymentPlanItemDetailsResponse" message="tns:updateSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrder">
+      <wsdl:input name="getAllSalesOrder" message="tns:getAllSalesOrder">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderResponse" message="tns:getAllSalesOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderHeaderPartnerByKey">
+      <wsdl:input name="getSalesOrderHeaderPartnerByKey" message="tns:getSalesOrderHeaderPartnerByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderHeaderPartnerByKeyResponse" message="tns:getSalesOrderHeaderPartnerByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderHeaderPartner">
+      <wsdl:input name="getAllSalesOrderHeaderPartner" message="tns:getAllSalesOrderHeaderPartner">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderHeaderPartnerResponse" message="tns:getAllSalesOrderHeaderPartnerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemPrElement">
+      <wsdl:input name="deleteSalesOrderItemPrElement" message="tns:deleteSalesOrderItemPrElement">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemPrElementResponse" message="tns:deleteSalesOrderItemPrElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderHeaderPrElementByKey">
+      <wsdl:input name="getSalesOrderHeaderPrElementByKey" message="tns:getSalesOrderHeaderPrElementByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderHeaderPrElementByKeyResponse" message="tns:getSalesOrderHeaderPrElementByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSalesOrder">
+      <wsdl:input name="createSalesOrder" message="tns:createSalesOrder">
+    </wsdl:input>
+      <wsdl:output name="createSalesOrderResponse" message="tns:createSalesOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSlsOrdPaymentPlanItemDetails">
+      <wsdl:input name="getAllSlsOrdPaymentPlanItemDetails" message="tns:getAllSlsOrdPaymentPlanItemDetails">
+    </wsdl:input>
+      <wsdl:output name="getAllSlsOrdPaymentPlanItemDetailsResponse" message="tns:getAllSlsOrdPaymentPlanItemDetailsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemText">
+      <wsdl:input name="getAllSalesOrderItemText" message="tns:getAllSalesOrderItemText">
+    </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemTextResponse" message="tns:getAllSalesOrderItemTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemTextByKey">
+      <wsdl:input name="getSalesOrderItemTextByKey" message="tns:getSalesOrderItemTextByKey">
+    </wsdl:input>
+      <wsdl:output name="getSalesOrderItemTextByKeyResponse" message="tns:getSalesOrderItemTextByKeyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemText">
+      <wsdl:input name="updateSalesOrderItemText" message="tns:updateSalesOrderItemText">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemTextResponse" message="tns:updateSalesOrderItemTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemText">
+      <wsdl:input name="deleteSalesOrderItemText" message="tns:deleteSalesOrderItemText">
+    </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemTextResponse" message="tns:deleteSalesOrderItemTextResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItem">
+      <wsdl:input name="updateSalesOrderItem" message="tns:updateSalesOrderItem">
+    </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemResponse" message="tns:updateSalesOrderItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSalesOrderItem">
+      <wsdl:input name="createSalesOrderItem" message="tns:createSalesOrderItem">
+    </wsdl:input>
+      <wsdl:output name="createSalesOrderItemResponse" message="tns:createSalesOrderItemResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DefaultSalesOrderCreateReadUpdateDeleteServiceServiceSoapBinding" type="tns:DefaultSalesOrderCreateReadUpdateDeleteService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="deleteSlsOrdPaymentPlanItemDetails">
+      <soap12:operation soapAction="urn:DeleteSlsOrdPaymentPlanItemDetails" style="document"/>
+      <wsdl:input name="deleteSlsOrdPaymentPlanItemDetails">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSlsOrdPaymentPlanItemDetailsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItem">
+      <soap12:operation soapAction="urn:DeleteSalesOrderItem" style="document"/>
+      <wsdl:input name="deleteSalesOrderItem">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemPartner">
+      <soap12:operation soapAction="urn:GetAllSalesOrderItemPartner" style="document"/>
+      <wsdl:input name="getAllSalesOrderItemPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderHeaderPartner">
+      <soap12:operation soapAction="urn:UpdateSalesOrderHeaderPartner" style="document"/>
+      <wsdl:input name="updateSalesOrderHeaderPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderHeaderPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemPartnerByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderItemPartnerByKey" style="document"/>
+      <wsdl:input name="getSalesOrderItemPartnerByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderItemPartnerByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderItemByKey" style="document"/>
+      <wsdl:input name="getSalesOrderItemByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderItemByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemPartner">
+      <soap12:operation soapAction="urn:UpdateSalesOrderItemPartner" style="document"/>
+      <wsdl:input name="updateSalesOrderItemPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItem">
+      <soap12:operation soapAction="urn:GetAllSalesOrderItem" style="document"/>
+      <wsdl:input name="getAllSalesOrderItem">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderText">
+      <soap12:operation soapAction="urn:GetAllSalesOrderText" style="document"/>
+      <wsdl:input name="getAllSalesOrderText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderText">
+      <soap12:operation soapAction="urn:DeleteSalesOrderText" style="document"/>
+      <wsdl:input name="deleteSalesOrderText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderScheduleLine">
+      <soap12:operation soapAction="urn:GetAllSalesOrderScheduleLine" style="document"/>
+      <wsdl:input name="getAllSalesOrderScheduleLine">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderScheduleLineResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemPrElementByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderItemPrElementByKey" style="document"/>
+      <wsdl:input name="getSalesOrderItemPrElementByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderItemPrElementByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderScheduleLineByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderScheduleLineByKey" style="document"/>
+      <wsdl:input name="getSalesOrderScheduleLineByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderScheduleLineByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrder">
+      <soap12:operation soapAction="urn:UpdateSalesOrder" style="document"/>
+      <wsdl:input name="updateSalesOrder">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemPrElement">
+      <soap12:operation soapAction="urn:UpdateSalesOrderItemPrElement" style="document"/>
+      <wsdl:input name="updateSalesOrderItemPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderText">
+      <soap12:operation soapAction="urn:UpdateSalesOrderText" style="document"/>
+      <wsdl:input name="updateSalesOrderText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemPartner">
+      <soap12:operation soapAction="urn:DeleteSalesOrderItemPartner" style="document"/>
+      <wsdl:input name="deleteSalesOrderItemPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemPrElement">
+      <soap12:operation soapAction="urn:GetAllSalesOrderItemPrElement" style="document"/>
+      <wsdl:input name="getAllSalesOrderItemPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrder">
+      <soap12:operation soapAction="urn:DeleteSalesOrder" style="document"/>
+      <wsdl:input name="deleteSalesOrder">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderHeaderPartner">
+      <soap12:operation soapAction="urn:DeleteSalesOrderHeaderPartner" style="document"/>
+      <wsdl:input name="deleteSalesOrderHeaderPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderHeaderPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderTextByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderTextByKey" style="document"/>
+      <wsdl:input name="getSalesOrderTextByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderTextByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderByKey" style="document"/>
+      <wsdl:input name="getSalesOrderByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderHeaderPrElement">
+      <soap12:operation soapAction="urn:GetAllSalesOrderHeaderPrElement" style="document"/>
+      <wsdl:input name="getAllSalesOrderHeaderPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderHeaderPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderHeaderPrElement">
+      <soap12:operation soapAction="urn:DeleteSalesOrderHeaderPrElement" style="document"/>
+      <wsdl:input name="deleteSalesOrderHeaderPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderHeaderPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSlsOrdPaymentPlanItemDetailsByKey">
+      <soap12:operation soapAction="urn:GetSlsOrdPaymentPlanItemDetailsByKey" style="document"/>
+      <wsdl:input name="getSlsOrdPaymentPlanItemDetailsByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSlsOrdPaymentPlanItemDetailsByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderHeaderPrElement">
+      <soap12:operation soapAction="urn:UpdateSalesOrderHeaderPrElement" style="document"/>
+      <wsdl:input name="updateSalesOrderHeaderPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderHeaderPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSlsOrdPaymentPlanItemDetails">
+      <soap12:operation soapAction="urn:UpdateSlsOrdPaymentPlanItemDetails" style="document"/>
+      <wsdl:input name="updateSlsOrdPaymentPlanItemDetails">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSlsOrdPaymentPlanItemDetailsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrder">
+      <soap12:operation soapAction="urn:GetAllSalesOrder" style="document"/>
+      <wsdl:input name="getAllSalesOrder">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderHeaderPartnerByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderHeaderPartnerByKey" style="document"/>
+      <wsdl:input name="getSalesOrderHeaderPartnerByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderHeaderPartnerByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderHeaderPartner">
+      <soap12:operation soapAction="urn:GetAllSalesOrderHeaderPartner" style="document"/>
+      <wsdl:input name="getAllSalesOrderHeaderPartner">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderHeaderPartnerResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemPrElement">
+      <soap12:operation soapAction="urn:DeleteSalesOrderItemPrElement" style="document"/>
+      <wsdl:input name="deleteSalesOrderItemPrElement">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemPrElementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderHeaderPrElementByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderHeaderPrElementByKey" style="document"/>
+      <wsdl:input name="getSalesOrderHeaderPrElementByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderHeaderPrElementByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSalesOrder">
+      <soap12:operation soapAction="urn:CreateSalesOrder" style="document"/>
+      <wsdl:input name="createSalesOrder">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createSalesOrderResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSlsOrdPaymentPlanItemDetails">
+      <soap12:operation soapAction="urn:GetAllSlsOrdPaymentPlanItemDetails" style="document"/>
+      <wsdl:input name="getAllSlsOrdPaymentPlanItemDetails">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSlsOrdPaymentPlanItemDetailsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSalesOrderItemText">
+      <soap12:operation soapAction="urn:GetAllSalesOrderItemText" style="document"/>
+      <wsdl:input name="getAllSalesOrderItemText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllSalesOrderItemTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesOrderItemTextByKey">
+      <soap12:operation soapAction="urn:GetSalesOrderItemTextByKey" style="document"/>
+      <wsdl:input name="getSalesOrderItemTextByKey">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSalesOrderItemTextByKeyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItemText">
+      <soap12:operation soapAction="urn:UpdateSalesOrderItemText" style="document"/>
+      <wsdl:input name="updateSalesOrderItemText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSalesOrderItemText">
+      <soap12:operation soapAction="urn:DeleteSalesOrderItemText" style="document"/>
+      <wsdl:input name="deleteSalesOrderItemText">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSalesOrderItemTextResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSalesOrderItem">
+      <soap12:operation soapAction="urn:UpdateSalesOrderItem" style="document"/>
+      <wsdl:input name="updateSalesOrderItem">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSalesOrderItemResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSalesOrderItem">
+      <soap12:operation soapAction="urn:CreateSalesOrderItem" style="document"/>
+      <wsdl:input name="createSalesOrderItem">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createSalesOrderItemResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DefaultSalesOrderCreateReadUpdateDeleteServiceService">
+    <wsdl:port name="DefaultSalesOrderCreateReadUpdateDeleteServicePort" binding="tns:DefaultSalesOrderCreateReadUpdateDeleteServiceServiceSoapBinding">
+      <soap12:address location="http://localhost:9090/DefaultSalesOrderCreateReadUpdateDeleteServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
