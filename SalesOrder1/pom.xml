@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <properties>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    	<cxf.version>3.2.6</cxf.version>
+    	<cxf.version>3.4.10</cxf.version>
 		<httpclient.version>3.1</httpclient.version>
 		<jax.ws.rs>2.1.1</jax.ws.rs>
 		<springmvc>4.1.6.RELEASE</springmvc>
